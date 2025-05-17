@@ -67,62 +67,7 @@ Buy on day 1 (`price = 1`) and sell on the last day (`price = 11`). Profit is `1
 
 ## 📝 **Solution Code**
 
-## Code (C)
 
-```c
-int maximumProfit(int prices[], int pricesSize) {
-    int buyPrice = prices[0];
-    int maxProfit = 0;
-
-    for (int i = 1; i < pricesSize; i++) {
-        if (prices[i] > buyPrice) {
-            maxProfit = (maxProfit > prices[i] - buyPrice) ? maxProfit : prices[i] - buyPrice;
-        } else {
-            buyPrice = prices[i];
-        }
-    }
-    return maxProfit;
-}
-```
-
-## Code (Cpp)
-
-```cpp
-class Solution {
-  public:
-    int maximumProfit(vector<int> &prices) {
-        int buyPrice = prices[0], maxProfit = 0;
-
-        for (int i = 1; i < prices.size(); i++) {
-            if (prices[i] > buyPrice) {
-                maxProfit = max(maxProfit, prices[i] - buyPrice);
-            } else {
-                buyPrice = prices[i];
-            }
-        }
-        return maxProfit;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public int maximumProfit(int prices[]) {
-        int buyPrice = prices[0], maxProfit = 0;
-
-        for (int i = 1; i < prices.length; i++) {
-            if (prices[i] > buyPrice) {
-                maxProfit = Math.max(maxProfit, prices[i] - buyPrice);
-            } else {
-                buyPrice = prices[i];
-            }
-        }
-        return maxProfit;
-    }
-}
-```
 
 ## Code (Python)
 
@@ -143,16 +88,10 @@ class Solution:
 
 # 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
 
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
