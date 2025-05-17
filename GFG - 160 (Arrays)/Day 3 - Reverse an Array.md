@@ -64,132 +64,6 @@ The array has only a single element, hence the reversed array is the same as the
 
 ## 📝 **Solution Code**
 
-## Code (C)
-
-```c
-void reverseArray(int arr[], int n) {
-    int left = 0, right = n - 1;
-
-    while (left < right) {
-        arr[left] ^= arr[right];
-        arr[right] ^= arr[left];
-        arr[left] ^= arr[right];
-        left++;
-        right--;
-    }
-}
-```
-
-<details>
-  <summary><h2 align='center'>👨‍💻 Alternative Approaches</h2></summary>
-
-### Alternative Approach (Using Temporary Variable)
-
-```c
-void reverseArray(int arr[], int n) {
-    int left = 0, right = n - 1;
-
-    while (left < right) {
-        int temp = arr[left];
-        arr[left] = arr[right];
-        arr[right] = temp;
-        left++;
-        right--;
-    }
-}
-```
-
-</details>
-
-## Code (CPP)
-
-```cpp
-class Solution {
-public:
-    void reverseArray(std::vector<int>& arr) {
-        std::reverse(arr.begin(), arr.end());
-    }
-};
-```
-
-<details>
-  <summary><h2 align='center'>👨‍💻 Alternative Approaches</h2></summary>
-
-### Alternative Approach (Using `std::swap`)
-
-```cpp
-class Solution {
-public:
-    void reverseArray(std::vector<int>& arr) {
-        int left = 0, right = arr.size() - 1;
-
-        while (left < right) {
-            std::swap(arr[left], arr[right]);
-            left++;
-            right--;
-        }
-    }
-};
-```
-
-### Alternative Approach (Using `XOR Swap`)
-
-```cpp
-class Solution {
-public:
-    void reverseArray(std::vector<int>& arr) {
-        int left = 0, right = arr.size() - 1;
-
-        while (left < right) {
-            arr[left] ^= arr[right];
-            arr[right] ^= arr[left];
-            arr[left] ^= arr[right];
-            left++;
-            right--;
-        }
-    }
-};
-```
-
-</details>
-
-## Code (Java)
-
-```java
-class Solution {
-    public void reverseArray(int[] arr) {
-        Integer[] boxedArray = Arrays.stream(arr).boxed().toArray(Integer[]::new);
-        List<Integer> list = Arrays.asList(boxedArray);
-        Collections.reverse(list);
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = list.get(i);
-        }
-    }
-}
-```
-
-<details>
-  <summary><h2 align='center'>👨‍💻 Alternative Approaches</h2></summary>
-
-### Alternative Approach (Using XOR Swap)
-
-```java
-class Solution {
-    public void reverseArray(int[] arr) {
-        int left = 0, right = arr.length - 1;
-
-        while (left < right) {
-            arr[left] = arr[left] ^ arr[right];
-            arr[right] = arr[left] ^ arr[right];
-            arr[left] = arr[left] ^ arr[right];
-            left++;
-            right--;
-        }
-    }
-}
-```
-
-</details>
 
 ## Code (Python)
 
@@ -219,16 +93,9 @@ class Solution:
 
 # 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
