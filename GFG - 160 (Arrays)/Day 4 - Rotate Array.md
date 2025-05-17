@@ -68,71 +68,9 @@ When we rotate 9 times, we'll get `[3, 9, 1, 7]` as the resultant array.
 
 ## 📝 **Solution Code**
 
-## Code (C)
 
-```c
-void rotateArr(int arr[], int n, int d) {
-    d %= n;
 
-    for (int i = 0; i < d / 2; i++) {
-        int temp = arr[i];
-        arr[i] = arr[d - i - 1];
-        arr[d - i - 1] = temp;
-    }
 
-    for (int i = d; i < (n + d) / 2; i++) {
-        int temp = arr[i];
-        arr[i] = arr[n - (i - d) - 1];
-        arr[n - (i - d) - 1] = temp;
-    }
-
-    for (int i = 0; i < n / 2; i++) {
-        int temp = arr[i];
-        arr[i] = arr[n - i - 1];
-        arr[n - i - 1] = temp;
-    }
-}
-```
-
-## Code (Cpp)
-
-```cpp
-class Solution {
-  public:
-    void rotateArr(vector<int>& arr, int d) {
-        int n = arr.size();
-        d %= n;
-
-        reverse(arr.begin(), arr.begin() + d);
-        reverse(arr.begin() + d, arr.begin() + n);
-        reverse(arr.begin(), arr.begin() + n);
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    static void rotateArr(int arr[], int d) {
-        int n = arr.length;
-        d %= n;
-        reverse(arr, 0, d - 1);
-        reverse(arr, d, n - 1);
-        reverse(arr, 0, n - 1);
-    }
-
-    static void reverse(int[] arr, int start, int end) {
-        while (start < end) {
-            int temp = arr[start];
-            arr[start] = arr[end];
-            arr[end] = temp;
-            start++;
-            end--;
-        }
-    }
-}
-```
 
 ## Code (Python)
 
@@ -148,16 +86,10 @@ class Solution:
 
 # 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
 
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
