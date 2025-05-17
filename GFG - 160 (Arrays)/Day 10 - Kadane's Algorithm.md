@@ -60,99 +60,6 @@ The subarray `{-2}` has the largest sum `-2`.
 
 ## 📝 **Solution Code**
 
-## Code (C)
-
-```c
-#include <limits.h>
-
-long long maxSubarraySum(int arr[], int n) {
-    long long maxh = 0, maxf = LLONG_MIN;
-
-    for (int i = 0; i < n; i++) {
-        maxh = (maxh + arr[i] > arr[i]) ? maxh + arr[i] : arr[i];
-        maxf = (maxf > maxh) ? maxf : maxh;
-    }
-
-    return maxf;
-}
-```
-
-## Code (Cpp)
-
-```cpp
-class Solution {
-public:
-    long long maxSubarraySum(vector<int>& arr) {
-        long long maxh = 0, maxf = LLONG_MIN;
-
-        for (auto num : arr) {
-            maxh = std::max(num + maxh, (long long)num);
-            maxf = std::max(maxf, maxh);
-        }
-
-        return maxf;
-    }
-};
-```
-
-<details>
-  <summary><h2 align='center'>👨‍💻 Alternative Approaches </h2></summary>
-
-1.
-
-```cpp
-class Solution {
-public:
-    long long maxSubarraySum(vector<int>& arr) {
-        int n = arr.size();
-        long long maxh = 0, maxf = LLONG_MIN;
-
-        for (int i = 0; i < n; i++) {
-            maxh = max((long long)arr[i], maxh + arr[i]);
-            maxf = max(maxf, maxh);
-        }
-
-        return maxf;
-    }
-};
-```
-
-2.
-
-```cpp
-class Solution {
-public:
-    long long maxSubarraySum(vector<int>& arr) {
-        long long maxh = 0, maxf = LLONG_MIN;
-
-        for (int num : arr) {
-            maxh = max((long long)num, maxh + num);
-            maxf = max(maxf, maxh);
-        }
-
-        return maxf;
-    }
-};
-```
-
-</details>
-
-## Code (Java)
-
-```java
-class Solution {
-    public long maxSubarraySum(int[] arr) {
-        long maxh = 0, maxf = Long.MIN_VALUE;
-
-        for (int num : arr) {
-            maxh = Math.max(num, maxh + num);
-            maxf = Math.max(maxf, maxh);
-        }
-
-        return maxf;
-    }
-}
-```
 
 ## Code (Python)
 
@@ -171,16 +78,9 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
