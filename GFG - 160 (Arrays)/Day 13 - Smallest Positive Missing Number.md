@@ -67,70 +67,6 @@ Smallest positive missing number is 1.
 
 ## 📝 **Solution Code**
 
-## Code (C)
-
-```c
-int missingNumber(int arr[], int n) {
-    for (int i = 0; i < n; i++) {
-        while (arr[i] > 0 && arr[i] <= n && arr[i] != arr[arr[i] - 1]) {
-            int temp = arr[i];
-            arr[i] = arr[arr[i] - 1];
-            arr[temp - 1] = temp;
-        }
-    }
-    for (int i = 0; i < n; i++) {
-        if (arr[i] != i + 1) {
-            return i + 1;
-        }
-    }
-    return n + 1;
-}
-```
-
-## Code (Cpp)
-
-```cpp
-class Solution {
-public:
-    int missingNumber(vector<int>& arr) {
-        int n = arr.size();
-        for (int i = 0; i < n; i++) {
-            while (arr[i] > 0 && arr[i] <= n && arr[i] != arr[arr[i] - 1]) {
-                swap(arr[i], arr[arr[i] - 1]);
-            }
-        }
-        for (int i = 0; i < n; i++) {
-            if (arr[i] != i + 1) {
-                return i + 1;
-            }
-        }
-        return n + 1;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public int missingNumber(int[] arr) {
-        int n = arr.length;
-        for (int i = 0; i < n; i++) {
-            while (arr[i] > 0 && arr[i] <= n && arr[i] != arr[arr[i] - 1]) {
-                int temp = arr[i];
-                arr[i] = arr[arr[i] - 1];
-                arr[temp - 1] = temp;
-            }
-        }
-        for (int i = 0; i < n; i++) {
-            if (arr[i] != i + 1) {
-                return i + 1;
-            }
-        }
-        return n + 1;
-    }
-}
-```
 
 ## Code (Python)
 
@@ -149,16 +85,8 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
-
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
