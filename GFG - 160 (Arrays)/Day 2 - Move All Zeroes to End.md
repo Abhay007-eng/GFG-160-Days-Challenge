@@ -79,43 +79,6 @@ No change in the array as all elements are zeros.
 
 ## 📝 **Solution Code**
 
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    void pushZerosToEnd(std::vector<int>& arr) {
-        int n = arr.size();
-        int nonZeroIndex = 0;
-
-        for (int i = 0; i < n; i++) {
-            if (arr[i] != 0) {
-                std::swap(arr[nonZeroIndex++], arr[i]);
-            }
-        }
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    void pushZerosToEnd(int[] arr) {
-        int n = arr.length;
-        int nonZeroIndex = 0;
-
-        for (int i = 0; i < n; i++) {
-            if (arr[i] != 0) {
-                int temp = arr[nonZeroIndex];
-                arr[nonZeroIndex] = arr[i];
-                arr[i] = temp;
-                nonZeroIndex++;
-            }
-        }
-    }
-}
-```
 
 ## Code (Python)
 
@@ -133,16 +96,9 @@ class Solution:
 
 # 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
