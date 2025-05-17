@@ -70,90 +70,6 @@ Maximum sum of the circular subarray is `23`. The subarray is `[7, 6, 5, -4, -1,
 
 ## 📝 **Solution Code**
 
-## Code (C)
-
-```c
-int max(int a, int b) {
-    return a > b ? a : b;
-}
-
-int min(int a, int b) {
-    return a < b ? a : b;
-}
-
-int circularSubarraySum(int arr[], int n) {
-    int total_sum = 0, max_sum = INT_MIN, min_sum = INT_MAX;
-    int curr_max = 0, curr_min = 0;
-    int all_negative = 1;
-
-    for (int i = 0; i < n; i++) {
-        total_sum += arr[i];
-
-        curr_max = max(arr[i], curr_max + arr[i]);
-        max_sum = max(max_sum, curr_max);
-
-        curr_min = min(arr[i], curr_min + arr[i]);
-        min_sum = min(min_sum, curr_min);
-
-        if (arr[i] > 0) all_negative = 0;
-    }
-
-    if (all_negative) return max_sum;
-
-    return max(max_sum, total_sum - min_sum);
-}
-```
-
-## Code (Cpp)
-
-```cpp
-class Solution {
-public:
-    int circularSubarraySum(vector<int>& a) {
-        int total_sum = 0, max_sum = INT_MIN, min_sum = INT_MAX;
-        int curr_max = 0, curr_min = 0;
-        bool all_negative = true;
-        for (int num : a) {
-            total_sum += num;
-            curr_max = max(num, curr_max + num);
-            max_sum = max(max_sum, curr_max);
-            curr_min = min(num, curr_min + num);
-            min_sum = min(min_sum, curr_min);
-            if (num > 0) all_negative = false;
-        }
-        if (all_negative) return max_sum;
-        return max(max_sum, total_sum - min_sum);
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public int circularSubarraySum(int[] arr) {
-        int totalSum = 0, maxSum = Integer.MIN_VALUE, minSum = Integer.MAX_VALUE;
-        int currMax = 0, currMin = 0;
-        boolean allNegative = true;
-
-        for (int num : arr) {
-            totalSum += num;
-
-            currMax = Math.max(num, currMax + num);
-            maxSum = Math.max(maxSum, currMax);
-
-            currMin = Math.min(num, currMin + num);
-            minSum = Math.min(minSum, currMin);
-
-            if (num > 0) allNegative = false;
-        }
-
-        if (allNegative) return maxSum;
-
-        return Math.max(maxSum, totalSum - minSum);
-    }
-}
-```
 
 ## Code (Python)
 
@@ -186,16 +102,9 @@ def circularSubarraySum(arr):
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
