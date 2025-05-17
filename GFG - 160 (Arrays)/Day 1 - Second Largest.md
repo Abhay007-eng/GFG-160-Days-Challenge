@@ -89,70 +89,8 @@ The largest element of the array is 10, and there is no distinct second largest 
 
 ## 📝 **Solution Code**
 
-## Code (C++)
 
-```cpp
-class Solution {
-public:
-    int getSecondLargest(const std::vector<int>& arr) {
-        int first = INT_MIN, second = INT_MIN;
 
-        for (int num : arr) {
-            if (num > first) {
-                second = first;
-                first = num;
-            } else if (num > second && num < first) {
-                second = num;
-            }
-        }
-
-        return second == INT_MIN ? -1 : second;
-    }
-};
-```
-
-<details>
-  <summary><h2 align='center'>👨‍💻 Alternative Approaches</h2></summary>
-
-### Alternative Approach (Using Sorting)
-
-```cpp
-class Solution {
-public:
-    int getSecondLargest(std::vector<int>& arr) {
-        std::sort(arr.rbegin(), arr.rend());
-        int first = arr[0];
-        for (int num : arr) {
-            if (num < first) return num;
-        }
-        return -1;
-    }
-};
-```
-
-</details>
-
-## Code (Java)
-
-```java
-class Solution {
-    public int getSecondLargest(int[] arr) {
-        int first = Integer.MIN_VALUE;
-        int second = Integer.MIN_VALUE;
-
-        for (int num : arr) {
-            if (num > first) {
-                second = first;
-                first = num;
-            } else if (num > second && num < first) {
-                second = num;
-            }
-        }
-
-        return second == Integer.MIN_VALUE ? -1 : second;
-    }
-}
-```
 
 ## Code (Python)
 
@@ -174,16 +112,10 @@ class Solution:
 
 # 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/)). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
 
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
