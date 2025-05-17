@@ -69,91 +69,7 @@ The next permutation of the given array is `[3, 4, 5, 1, 2]`.
 
 ## 📝 **Solution Code**
 
-## Code (C)
 
-```c
-void nextPermutation(int arr[], int n) {
-    int i = n - 2, j = n - 1;
-
-    while (i >= 0 && arr[i] >= arr[i + 1])
-        i--;
-
-    if (i >= 0) {
-        while (arr[j] <= arr[i])
-            j--;
-
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
-
-    int start = i + 1, end = n - 1;
-    while (start < end) {
-        int temp = arr[start];
-        arr[start] = arr[end];
-        arr[end] = temp;
-        start++;
-        end--;
-    }
-}
-```
-
-## Code (C++)
-
-```cpp
-class Solution {
-  public:
-    void nextPermutation(vector<int>& arr) {
-        int n = arr.size(), i = n - 2, j = n - 1;
-
-        while (i >= 0 && arr[i] >= arr[i + 1])
-            i--;
-
-        if (i >= 0) {
-            while (arr[j] <= arr[i])
-                j--;
-            swap(arr[i], arr[j]);
-        }
-
-        reverse(arr.begin() + i + 1, arr.end());
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    void nextPermutation(int[] arr) {
-        int n = arr.length;
-        int i = n - 2, j = n - 1;
-
-        while (i >= 0 && arr[i] >= arr[i + 1])
-            i--;
-
-        if (i >= 0) {
-            while (arr[j] <= arr[i])
-                j--;
-
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-        }
-
-        reverse(arr, i + 1, n - 1);
-    }
-
-    void reverse(int[] arr, int start, int end) {
-        while (start < end) {
-            int temp = arr[start];
-            arr[start] = arr[end];
-            arr[end] = temp;
-            start++;
-            end--;
-        }
-    }
-}
-```
 
 ## Code (Python)
 
@@ -179,16 +95,9 @@ class Solution:
 
 # 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
