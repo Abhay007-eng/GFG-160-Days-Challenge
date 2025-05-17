@@ -58,57 +58,7 @@ Maximum Profit = 2.
 
 ## 📝 **Solution Code**
 
-## Code (C)
 
-```c
-int maximumProfit(int prices[], int n) {
-    int profit = 0;
-
-    for (int i = 1; i < n; i++) {
-        if (prices[i] > prices[i - 1]) {
-            profit += prices[i] - prices[i - 1];
-        }
-    }
-
-    return profit;
-}
-```
-
-## Code (Cpp)
-
-```cpp
-class Solution {
-  public:
-    int maximumProfit(vector<int> &prices) {
-        int profit = 0;
-        int n = prices.size();
-
-        for (int i = 1; i < n; i++) {
-            if (prices[i] > prices[i - 1]) {
-                profit += prices[i] - prices[i - 1];
-            }
-        }
-
-        return profit;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public int maximumProfit(int prices[]) {
-        int profit = 0;
-        for (int i = 1; i < prices.length; i++) {
-            if (prices[i] > prices[i - 1]) {
-                profit += prices[i] - prices[i - 1];
-            }
-        }
-        return profit;
-    }
-}
-```
 
 ## Code (Python)
 
@@ -126,16 +76,9 @@ class Solution:
 
 # 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
