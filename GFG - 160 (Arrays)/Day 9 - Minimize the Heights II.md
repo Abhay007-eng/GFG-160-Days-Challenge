@@ -69,88 +69,7 @@ After performing the operations, the modified heights will be `{6, 12, 9, 13, 17
 
 ## 📝 **Solution Code**
 
-## Code (C++)
 
-```cpp
-class Solution {
-public:
-    int getMinDiff(vector<int>& arr, int k) {
-        int n = arr.size();
-        vector<pair<int, int>> modifiedHeights;
-        vector<int> frequency(n, 0);
-
-        for (int i = 0; i < n; i++) {
-            if (arr[i] - k >= 0) {
-                modifiedHeights.emplace_back(arr[i] - k, i);
-            }
-            modifiedHeights.emplace_back(arr[i] + k, i);
-        }
-
-        sort(modifiedHeights.begin(), modifiedHeights.end());
-
-        int left = 0, right = 0, covered = 0, minDifference = INT_MAX;
-
-        while (right < modifiedHeights.size()) {
-            if (frequency[modifiedHeights[right].second]++ == 0) {
-                covered++;
-            }
-
-            while (covered == n) {
-                minDifference = min(minDifference, modifiedHeights[right].first - modifiedHeights[left].first);
-
-                if (--frequency[modifiedHeights[left].second] == 0) {
-                    covered--;
-                }
-                left++;
-            }
-            right++;
-        }
-
-        return minDifference;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public int getMinDiff(int[] arr, int k) {
-        int n = arr.length;
-        List<int[]> modifiedHeights = new ArrayList<>();
-        int[] frequency = new int[n];
-
-        for (int i = 0; i < n; i++) {
-            if (arr[i] - k >= 0) {
-                modifiedHeights.add(new int[]{arr[i] - k, i});
-            }
-            modifiedHeights.add(new int[]{arr[i] + k, i});
-        }
-
-        modifiedHeights.sort(Comparator.comparingInt(a -> a[0]));
-
-        int left = 0, right = 0, covered = 0, minDifference = Integer.MAX_VALUE;
-
-        while (right < modifiedHeights.size()) {
-            if (frequency[modifiedHeights.get(right)[1]]++ == 0) {
-                covered++;
-            }
-
-            while (covered == n) {
-                minDifference = Math.min(minDifference, modifiedHeights.get(right)[0] - modifiedHeights.get(left)[0]);
-
-                if (--frequency[modifiedHeights.get(left)[1]] == 0) {
-                    covered--;
-                }
-                left++;
-            }
-            right++;
-        }
-
-        return minDifference;
-    }
-}
-```
 
 ## Code (Python)
 
@@ -177,16 +96,10 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
 
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
