@@ -1,10 +1,3 @@
----
-Difficulty: Easy
-Source: 160 Days of Problem Solving
-Tags:
-  - Strings
-  - Sorting
----
 
 # 🚀 _Day 3. Anagram_ 🧠
 
@@ -64,67 +57,6 @@ Both strings contain the same character, so they are anagrams.
 
 ## 📝 **Solution Code**
 
-## Code (C)
-
-```c
-bool areAnagrams(char s1[], char s2[]) {
-    if (strlen(s1) != strlen(s2)) return false;
-
-    int counts[26] = {0};
-    for (int i = 0; i < strlen(s1); i++) {
-        counts[s1[i] - 'a']++;
-        counts[s2[i] - 'a']--;
-    }
-
-    for (int i = 0; i < 26; i++) {
-        if (counts[i] != 0) return false;
-    }
-
-    return true;
-}
-```
-
-## Code (Cpp)
-
-```cpp
-class Solution {
-public:
-    bool areAnagrams(string& s1, string& s2) {
-        if (s1.length() != s2.length()) return false;
-        int counts[26] = {0};
-        for (int i = 0; i < s1.length(); i++) {
-            counts[s1[i] - 'a']++;
-            counts[s2[i] - 'a']--;
-        }
-        for (int count : counts) {
-            if (count != 0) return false;
-        }
-        return true;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public static boolean areAnagrams(String s1, String s2) {
-        if (s1.length() != s2.length()) return false;
-
-        int[] counts = new int[26];
-        for (int i = 0; i < s1.length(); i++) {
-            counts[s1.charAt(i) - 'a']++;
-            counts[s2.charAt(i) - 'a']--;
-        }
-
-        for (int count : counts) {
-            if (count != 0) return false;
-        }
-
-        return true;
-    }
-}
-```
 
 ## Code (Python)
 
@@ -148,16 +80,8 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
----
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
