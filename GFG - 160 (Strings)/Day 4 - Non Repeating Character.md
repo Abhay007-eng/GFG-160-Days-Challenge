@@ -1,10 +1,3 @@
----
-Difficulty: Easy
-Source: 160 Days of Problem Solving
-Tags:
-  - Strings
-  - Hash
----
 
 # 🚀 _Day 4. Non-Repeating Character_ 🧠
 
@@ -67,86 +60,6 @@ All the characters in the given string are repeating.
 
 ## 📝 **Solution Code**
 
-## Code (C)
-
-```c
-char nonRepeatingChar(char s[]) {
-    int freq[26] = {0};
-    for (int i = 0; s[i] != '\0'; i++) {
-        freq[s[i] - 'a']++;
-    }
-    for (int i = 0; s[i] != '\0'; i++) {
-        if (freq[s[i] - 'a'] == 1) {
-            return s[i];
-        }
-    }
-    return '$';
-}
-```
-
-## Code (Cpp)
-
-```cpp
-class Solution {
-public:
-    char nonRepeatingChar(string &s) {
-        int freq[26] = {0};
-        for (char c : s) {
-            freq[c - 'a']++;
-        }
-        for (char c : s) {
-            if (freq[c - 'a'] == 1) {
-                return c;
-            }
-        }
-        return '$';
-    }
-};
-```
-
-<details>
-  <summary><h2 align='center'>👨‍💻 Alternative Approaches</h2></summary>
-  
-```cpp
-class Solution {
-public:
-    char nonRepeatingChar(string &s) {
-        unordered_map<char, int> freq;
-
-        for (char c : s) {
-            freq[c]++;
-        }
-        for (char c : s) {
-            if (freq[c] == 1) {
-                return c;
-            }
-        }
-        return '$';
-    }
-
-};
-
-````
-</details>
-
-## Code (Java)
-
-```java
-class Solution {
-    static char nonRepeatingChar(String s) {
-        int[] freq = new int[26];
-        for (char c : s.toCharArray()) {
-            freq[c - 'a']++;
-        }
-        for (char c : s.toCharArray()) {
-            if (freq[c - 'a'] == 1) {
-                return c;
-            }
-        }
-        return '$';
-    }
-}
-````
 
 ## Code (Python)
 
@@ -164,16 +77,9 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
