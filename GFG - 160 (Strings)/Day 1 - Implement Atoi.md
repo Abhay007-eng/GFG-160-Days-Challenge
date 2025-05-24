@@ -1,10 +1,3 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - Strings
-  - Design-Pattern
----
 
 # 🚀 _Day 1. Implement Atoi_ 🧠
 
@@ -90,82 +83,7 @@ The string converts to `-12`, ignoring the non-digit character `g`.
 
 ## 📝 **Solution Code**
 
-## Code (C)
 
-```c
-int myAtoi(char *s) {
-    int idx = 0, sign = 1;
-    long res = 0;
-
-    while (s[idx] == ' ') idx++;
-
-    if (s[idx] == '-' || s[idx] == '+') {
-        sign = (s[idx++] == '-') ? -1 : 1;
-    }
-
-    while (s[idx] >= '0' && s[idx] <= '9') {
-        res = res * 10 + (s[idx++] - '0');
-
-        if (res * sign > INT_MAX) return INT_MAX;
-        if (res * sign < INT_MIN) return INT_MIN;
-    }
-
-    return (int)(res * sign);
-}
-```
-
-## Code (Cpp)
-
-```cpp
-class Solution {
-public:
-    int myAtoi(char *s) {
-        int idx = 0, sign = 1;
-        long res = 0;
-
-        while (s[idx] == ' ') idx++;
-
-        if (s[idx] == '-' || s[idx] == '+') {
-            sign = (s[idx++] == '-') ? -1 : 1;
-        }
-
-        while (s[idx] >= '0' && s[idx] <= '9') {
-            res = res * 10 + (s[idx++] - '0');
-
-            if (res * sign > INT_MAX) return INT_MAX;
-            if (res * sign < INT_MIN) return INT_MIN;
-        }
-
-        return static_cast<int>(res * sign);
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public int myAtoi(String s) {
-        int idx = 0, sign = 1;
-        long res = 0;
-
-        while (idx < s.length() && s.charAt(idx) == ' ') idx++;
-
-        if (idx < s.length() && (s.charAt(idx) == '-' || s.charAt(idx) == '+')) {
-            sign = (s.charAt(idx++) == '-') ? -1 : 1;
-        }
-
-        while (idx < s.length() && s.charAt(idx) >= '0' && s.charAt(idx) <= '9') {
-            res = res * 10 + (s.charAt(idx++) - '0');
-
-            if (res * sign > Integer.MAX_VALUE) return Integer.MAX_VALUE;
-            if (res * sign < Integer.MIN_VALUE) return Integer.MIN_VALUE;
-        }
-
-        return (int)(res * sign);
-    }
-}
-```
 
 ## Code (Python)
 
@@ -195,16 +113,8 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
----
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
