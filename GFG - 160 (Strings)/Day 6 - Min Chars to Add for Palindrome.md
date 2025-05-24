@@ -1,9 +1,3 @@
----
-Difficulty: Hard
-Source: 160 Days of Problem Solving
-Tags:
-  - Strings
----
 
 # 🚀 _Day 6. Min Chars to Add for Palindrome_ 🧠
 
@@ -66,105 +60,6 @@ The last value in the LPS array gives the length of the longest palindromic suff
 
 ## 📝 **Solution Code**
 
-## Code (C)
-
-```c
-void computeLPSArray(char* pat, int M, int* lps) {
-    int length = 0;
-    lps[0] = 0;
-    int i = 1;
-
-    while (i < M) {
-        if (pat[i] == pat[length]) {
-            length++;
-            lps[i] = length;
-            i++;
-        } else {
-            if (length != 0) {
-                length = lps[length - 1];
-            } else {
-                lps[i] = 0;
-                i++;
-            }
-        }
-    }
-}
-
-int minChar(char str[]) {
-    int n = strlen(str);
-    char revStr[n + 1];
-    for (int i = 0; i < n; i++) {
-        revStr[i] = str[n - i - 1];
-    }
-    revStr[n] = '\0';
-
-    char combined[2 * n + 2];
-    snprintf(combined, sizeof(combined), "%s$%s", str, revStr);
-
-    int lps[2 * n + 2];
-    computeLPSArray(combined, strlen(combined), lps);
-
-    return n - lps[strlen(combined) - 1];
-}
-```
-
-## Code (Cpp)
-
-```cpp
-class Solution {
-public:
-    int minChar(string& str) {
-        int n = str.length();
-        string revStr = str;
-        reverse(revStr.begin(), revStr.end());
-
-        string combined = str + "$" + revStr;
-        int m = combined.length();
-
-        vector<int> lps(m, 0);
-        for (int i = 1; i < m; i++) {
-            int j = lps[i - 1];
-            while (j > 0 && combined[i] != combined[j]) {
-                j = lps[j - 1];
-            }
-            if (combined[i] == combined[j]) {
-                j++;
-            }
-            lps[i] = j;
-        }
-
-        return n - lps.back();
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public static int minChar(String s) {
-        int n = s.length();
-
-        String revStr = new StringBuilder(s).reverse().toString();
-
-        String combined = s + "$" + revStr;
-
-        int[] lps = new int[combined.length()];
-        for (int i = 1; i < combined.length(); i++) {
-            int j = lps[i - 1];
-            while (j > 0 && combined.charAt(i) != combined.charAt(j)) {
-                j = lps[j - 1];
-            }
-            if (combined.charAt(i) == combined.charAt(j)) {
-                j++;
-            }
-            lps[i] = j;
-        }
-
-        return n - lps[combined.length() - 1];
-    }
-}
-```
 
 ## Code (Python)
 
@@ -191,16 +86,10 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
 
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
