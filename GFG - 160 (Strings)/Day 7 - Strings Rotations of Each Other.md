@@ -1,9 +1,3 @@
----
-Difficulty: Easy
-Source: 160 Days of Problem Solving
-Tags:
-  - Strings
----
 
 # 🚀 _Day 7. Strings Rotations of Each Other_ 🧠
 
@@ -71,88 +65,6 @@ The strings are not rotations of each other.
 
 ## 📝 **Solution Code**
 
-## Code (C)
-
-```c
-int areRotations(char* s1, char* s2) {
-    if (strlen(s1) != strlen(s2)) return 0;
-    char* temp = (char*)malloc(2 * strlen(s1) + 1);
-    strcpy(temp, s1);
-    strcat(temp, s1);
-    int result = (strstr(temp, s2) != NULL);
-
-    free(temp);
-    return result;
-}
-```
-
-## Code (Cpp)
-
-```cpp
-class Solution {
-  public:
-    bool areRotations(string &s1, string &s2) {
-        if (s1.length() != s2.length()) return false;
-        string temp = s1 + s1;
-        return (temp.find(s2) != string::npos);
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public static boolean areRotations(String s1, String s2) {
-        if (s1.length() != s2.length()) return false;
-        String temp = s1 + s1;
-        return kmpSearch(temp, s2);
-    }
-
-    private static boolean kmpSearch(String text, String pattern) {
-        int[] lps = computeLPSArray(pattern);
-        int i = 0, j = 0;
-
-        while (i < text.length()) {
-            if (text.charAt(i) == pattern.charAt(j)) {
-                i++;
-                j++;
-
-                if (j == pattern.length()) {
-                    return true;
-                }
-            } else {
-                if (j != 0) {
-                    j = lps[j - 1];
-                } else {
-                    i++;
-                }
-            }
-        }
-        return false;
-    }
-    private static int[] computeLPSArray(String pattern) {
-        int[] lps = new int[pattern.length()];
-        int len = 0, i = 1;
-
-        while (i < pattern.length()) {
-            if (pattern.charAt(i) == pattern.charAt(len)) {
-                len++;
-                lps[i] = len;
-                i++;
-            } else {
-                if (len != 0) {
-                    len = lps[len - 1];
-                } else {
-                    lps[i] = 0;
-                    i++;
-                }
-            }
-        }
-        return lps;
-    }
-}
-```
 
 ## Code (Python)
 
@@ -167,16 +79,10 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
 
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
