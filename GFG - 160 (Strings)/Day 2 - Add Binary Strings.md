@@ -1,10 +1,3 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - Strings
-  - Mathematical
----
 
 # 🚀 _Day 2. Add Binary Strings_ 🧠
 
@@ -69,62 +62,6 @@ You are given two binary strings `s1` and `s2` consisting of only `0`s and `1`s.
 
 ## 📝 **Solution Code**
 
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    string addBinary(const string& s1, const string& s2) {
-        int i = s1.size() - 1, j = s2.size() - 1;
-        int carry = 0;
-        string result;
-
-        while (i >= 0 || j >= 0 || carry > 0) {
-            int sum = carry;
-            if (i >= 0) sum += s1[i--] - '0';
-            if (j >= 0) sum += s2[j--] - '0';
-            result.push_back((sum % 2) + '0');
-            carry = sum / 2;
-        }
-
-        reverse(result.begin(), result.end());
-        size_t first_non_zero = result.find_first_not_of('0');
-        return (first_non_zero != string::npos) ? result.substr(first_non_zero) : "0";
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public String addBinary(String s1, String s2) {
-        int n1 = s1.length(), n2 = s2.length();
-        StringBuilder result = new StringBuilder();
-
-        int carry = 0;
-        int i = n1 - 1, j = n2 - 1;
-
-        while (i >= 0 || j >= 0 || carry == 1) {
-            int sum = carry;
-
-            if (i >= 0) sum += s1.charAt(i--) - '0';
-            if (j >= 0) sum += s2.charAt(j--) - '0';
-
-            result.append(sum % 2);
-            carry = sum / 2;
-        }
-
-        result.reverse();
-
-        while (result.length() > 1 && result.charAt(0) == '0') {
-            result.deleteCharAt(0);
-        }
-
-        return result.toString();
-    }
-}
-```
 
 ## Code (Python)
 
@@ -154,16 +91,8 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
----
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
