@@ -1,11 +1,3 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - Arrays
-  - Greedy
-  - Sorting
----
 
 # 🚀 _Day 6. Non-overlapping Intervals_ 🧠
 
@@ -70,71 +62,6 @@ All intervals are already non-overlapping.
 
 ## 📝 **Solution Code**
 
-## Code (C)
-
-```c
-int compare(const void *a, const void *b) {
-    Interval *intervalA = (Interval *)a;
-    Interval *intervalB = (Interval *)b;
-    return (intervalA->start - intervalB->start);
-}
-int minRemoval(Interval *intervals, int intervalsSize) {
-    qsort(intervals, intervalsSize, sizeof(Interval), compare);
-    int count = 0, prevEnd = intervals[0].end;
-
-    for (int i = 1; i < intervalsSize; i++) {
-        if (intervals[i].start < prevEnd) {
-            count++;
-            prevEnd = (prevEnd < intervals[i].end) ? prevEnd : intervals[i].end;
-        } else {
-            prevEnd = intervals[i].end;
-        }
-    }
-    return count;
-}
-```
-
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    int minRemoval(vector<vector<int>>& intervals) {
-        sort(intervals.begin(), intervals.end());
-        int count = 0, prevEnd = intervals[0][1];
-        for (int i = 1; i < intervals.size(); i++) {
-            if (intervals[i][0] < prevEnd) {
-                count++;
-                prevEnd = min(prevEnd, intervals[i][1]);
-            } else {
-                prevEnd = intervals[i][1];
-            }
-        }
-        return count;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public int minRemoval(int[][] intervals) {
-        Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
-        int count = 0, prevEnd = intervals[0][1];
-
-        for (int i = 1; i < intervals.length; i++) {
-            if (intervals[i][0] < prevEnd) {
-                count++;
-                prevEnd = Math.min(prevEnd, intervals[i][1]);
-            } else {
-                prevEnd = intervals[i][1];
-            }
-        }
-        return count;
-    }
-}
-```
 
 ## Code (Python)
 
@@ -156,16 +83,9 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
