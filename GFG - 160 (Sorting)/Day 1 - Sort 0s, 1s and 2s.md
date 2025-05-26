@@ -1,10 +1,3 @@
----
-Difficulty: Easy  
-Source: 160 Days of Problem Solving  
-Tags:
-  - Sorting
-  - Arrays
----
 
 # 🚀 _Day 1. Sort 0s, 1s, and 2s_ 🧠
 
@@ -66,104 +59,6 @@ The array is sorted into ascending order.
 
 ## 📝 **Solution Code**
 
-## Code (C)
-
-```c
-void sort012(int arr[], int n) {
-    int low = 0, mid = 0, high = n - 1;
-
-    while (mid <= high) {
-        switch (arr[mid]) {
-            case 0:
-                {
-                    int temp = arr[low];
-                    arr[low] = arr[mid];
-                    arr[mid] = temp;
-                }
-                low++;
-                mid++;
-                break;
-
-            case 1:
-                mid++;
-                break;
-
-            case 2:
-                {
-                    int temp = arr[high];
-                    arr[high] = arr[mid];
-                    arr[mid] = temp;
-                }
-                high--;
-                break;
-        }
-    }
-}
-```
-
-
-
-## Code (Cpp)
-
-```cpp
-class Solution {
-public:
-    void sort012(vector<int>& arr) {
-        int low = 0, mid = 0, high = arr.size() - 1;
-
-        while (mid <= high) {
-            switch (arr[mid]) {
-                case 0:
-                    swap(arr[mid++], arr[low++]);
-                    break;
-                case 1:
-                    mid++;
-                    break;
-                case 2:
-                    swap(arr[mid], arr[high--]);
-                    break;
-            }
-        }
-    }
-};
-```
-
-
-
-## Code (Java)
-
-```java
-class Solution {
-    public void sort012(int[] arr) {
-        int low = 0, mid = 0, high = arr.length - 1;
-
-        while (mid <= high) {
-            switch (arr[mid]) {
-                case 0:
-                    int temp0 = arr[low];
-                    arr[low] = arr[mid];
-                    arr[mid] = temp0;
-                    low++;
-                    mid++;
-                    break;
-
-                case 1:
-                    mid++;
-                    break;
-
-                case 2:
-                    int temp2 = arr[high];
-                    arr[high] = arr[mid];
-                    arr[mid] = temp2;
-                    high--;
-                    break;
-            }
-        }
-    }
-}
-```
-
-
 
 ## Code (Python)
 
@@ -189,16 +84,8 @@ class Solution:
 ## 🎯 **Contribution and Support:**
 
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/starshadow0707/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/)). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
----
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
