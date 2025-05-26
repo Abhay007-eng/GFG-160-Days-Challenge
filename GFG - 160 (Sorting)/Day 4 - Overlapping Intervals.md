@@ -1,11 +1,3 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - Arrays
-  - Hash
-  - Sorting
----
 
 # 🚀 _Day 4. Overlapping Intervals_ 🧠
 
@@ -66,88 +58,6 @@ The output should return an array of the merged intervals sorted by their starti
 
 ## 📝 **Solution Code**
 
-## Code (C)
-
-```c
-int compare(const void* a, const void* b) {
-    return ((Interval*)a)->start - ((Interval*)b)->start;
-}
-
-int mergeOverlap(Interval arr[], int n, Interval result[]) {
-    if (n == 0) return 0;
-
-    qsort(arr, n, sizeof(Interval), compare);
-
-    result[0] = arr[0];
-    int index = 0;
-
-    for (int i = 1; i < n; i++) {
-        if (arr[i].start <= result[index].end) {
-            result[index].end = result[index].end > arr[i].end ? result[index].end : arr[i].end;
-        } else {
-            index++;
-            result[index] = arr[i];
-        }
-    }
-    return index + 1;
-}
-```
-
-## Code (Cpp)
-
-```cpp
-class Solution {
-public:
-    vector<vector<int>> mergeOverlap(vector<vector<int>>& intervals) {
-        if (intervals.empty())
-            return {};
-
-        sort(intervals.begin(), intervals.end());
-
-        vector<vector<int>> merged;
-        merged.push_back(intervals[0]);
-
-        for (int i = 1; i < intervals.size(); i++) {
-            auto& last = merged.back();
-
-            if (intervals[i][0] <= last[1]) {
-                last[1] = max(last[1], intervals[i][1]);
-            } else {
-                merged.push_back(intervals[i]);
-            }
-        }
-
-        return merged;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public List<int[]> mergeOverlap(int[][] intervals) {
-        List<int[]> merged = new ArrayList<>();
-        if (intervals.length == 0) return merged;
-
-        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
-
-        int[] current = intervals[0];
-        merged.add(current);
-
-        for (int i = 1; i < intervals.length; i++) {
-            if (intervals[i][0] <= current[1]) {
-                current[1] = Math.max(current[1], intervals[i][1]);
-            } else {
-                current = intervals[i];
-                merged.add(current);
-            }
-        }
-
-        return merged;
-    }
-}
-```
 
 ## Code (Python)
 
@@ -172,16 +82,8 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
-
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
