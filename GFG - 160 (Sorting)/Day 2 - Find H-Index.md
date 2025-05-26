@@ -1,10 +1,3 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - Sorting
-  - Arrays
----
 
 # 🚀 _Day 2. Find H-Index_ 🧠
 
@@ -67,83 +60,6 @@ No paper has been cited at least once.
 
 ## 📝 **Solution Code**
 
-## Code (C)
-
-```c
-int hIndex(int citations[], int citationsSize) {
-    int buckets[citationsSize + 1];
-    memset(buckets, 0, sizeof(buckets));
-
-    for (int i = 0; i < citationsSize; i++) {
-        if (citations[i] >= citationsSize)
-            buckets[citationsSize]++;
-        else
-            buckets[citations[i]]++;
-    }
-
-    int cumulative = 0;
-    for (int i = citationsSize; i >= 0; i--) {
-        cumulative += buckets[i];
-        if (cumulative >= i)
-            return i;
-    }
-    return 0;
-}
-```
-
-## Code (Cpp)
-
-```cpp
-class Solution {
-public:
-    int hIndex(vector<int>& citations) {
-        int n = citations.size();
-        vector<int> buckets(n + 1, 0);
-
-        for (int c : citations) {
-            if (c >= n)
-                buckets[n]++;
-            else
-                buckets[c]++;
-        }
-
-        int cumulative = 0;
-        for (int i = n; i >= 0; --i) {
-            cumulative += buckets[i];
-            if (cumulative >= i)
-                return i;
-        }
-        return 0;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public int hIndex(int[] citations) {
-        int n = citations.length;
-        int[] buckets = new int[n + 1];
-
-        for (int c : citations) {
-            if (c >= n)
-                buckets[n]++;
-            else
-                buckets[c]++;
-        }
-
-        int cumulative = 0;
-        for (int i = n; i >= 0; i--) {
-            cumulative += buckets[i];
-            if (cumulative >= i)
-                return i;
-        }
-        return 0;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -168,16 +84,8 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
-
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
