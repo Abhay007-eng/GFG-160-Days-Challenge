@@ -1,9 +1,3 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - Sorting
----
 
 # 🚀 _Day 5. Insert Intervals_ 🧠
 
@@ -68,90 +62,6 @@ O(n), as we store the resulting intervals in a new list.
 
 ## 📝 **Solution Code**
 
-## Code (C)
-
-```c
-Interval* insertInterval(Interval* intervals, int intervalsSize, Interval newInterval,
-                         int* returnSize) {
-    Interval* result = (Interval*)malloc((intervalsSize + 1) * sizeof(Interval));
-    int idx = 0;
-
-    for (int i = 0; i < intervalsSize; i++) {
-        if (intervals[i].end < newInterval.start) {
-            result[idx++] = intervals[i];
-        }
-        else if (intervals[i].start <= newInterval.end) {
-            newInterval.start = (newInterval.start < intervals[i].start) ? newInterval.start : intervals[i].start;
-            newInterval.end = (newInterval.end > intervals[i].end) ? newInterval.end : intervals[i].end;
-        }
-        else {
-            result[idx++] = newInterval;
-            newInterval = intervals[i];
-        }
-    }
-    result[idx++] = newInterval;
-
-    *returnSize = idx;
-    return result;
-}
-```
-
-## Code (Cpp)
-
-```cpp
-class Solution {
-public:
-    vector<vector<int>> insertInterval(vector<vector<int>> &intervals, vector<int> &newInterval) {
-        vector<vector<int>> result;
-        for (auto &interval : intervals) {
-            if (interval[1] < newInterval[0]) {
-
-                result.push_back(interval);
-            } else if (interval[0] > newInterval[1]) {
-
-                result.push_back(newInterval);
-                newInterval = interval;
-            } else {
-
-                newInterval[0] = min(newInterval[0], interval[0]);
-                newInterval[1] = max(newInterval[1], interval[1]);
-            }
-        }
-
-        result.push_back(newInterval);
-        return result;
-    }
-};
-
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    static ArrayList<int[]> insertInterval(int[][] intervals, int[] newInterval) {
-        ArrayList<int[]> result = new ArrayList<>();
-        int i = 0; int n = intervals.length;
-        while (i < intervals.length && intervals[i][1] < newInterval[0]) {
-            result.add(intervals[i]);
-            i++;
-        }
-        while (i < intervals.length && intervals[i][0] <= newInterval[1]) {
-            newInterval[0] = Math.min(newInterval[0], intervals[i][0]);
-            newInterval[1] = Math.max(newInterval[1], intervals[i][1]);
-            i++;
-        }
-        result.add(newInterval);
-        while (i < intervals.length) {
-            result.add(intervals[i]);
-            i++;
-        }
-
-        return result;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -173,16 +83,9 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
