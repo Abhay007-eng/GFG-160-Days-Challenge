@@ -1,11 +1,3 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - Arrays
-  - Divide and Conquer
-  - Sorting
----
 
 # 🚀 _Day 3. Count Inversions_ 🧠
 
@@ -76,138 +68,6 @@ All elements of the array are the same, so there are no inversions.
 
 ## 📝 **Solution Code**
 
-## Code (C)
-
-```c
-int mergeAndCount(int arr[], int temp[], int left, int mid, int right) {
-    int i = left, j = mid + 1, k = left, inversions = 0;
-
-    while (i <= mid && j <= right) {
-        if (arr[i] <= arr[j]) {
-            temp[k++] = arr[i++];
-        } else {
-            temp[k++] = arr[j++];
-            inversions += (mid - i + 1);
-        }
-    }
-
-    while (i <= mid) temp[k++] = arr[i++];
-    while (j <= right) temp[k++] = arr[j++];
-
-    for (i = left; i <= right; i++) {
-        arr[i] = temp[i];
-    }
-
-    return inversions;
-}
-
-int mergeSortAndCount(int arr[], int temp[], int left, int right) {
-    int inversions = 0;
-    if (left < right) {
-        int mid = left + (right - left) / 2;
-
-        inversions += mergeSortAndCount(arr, temp, left, mid);
-        inversions += mergeSortAndCount(arr, temp, mid + 1, right);
-        inversions += mergeAndCount(arr, temp, left, mid, right);
-    }
-    return inversions;
-}
-int countInversions(int arr[], int n) {
-    int temp[n];
-    return mergeSortAndCount(arr, temp, 0, n - 1);
-}
-```
-
-## Code (Cpp)
-
-```cpp
-class Solution {
-public:
-    int mergeAndCount(vector<int>& arr, int left, int mid, int right) {
-        int i = left, j = mid + 1, k = 0, inversions = 0;
-        vector<int> temp(right - left + 1);
-
-        while (i <= mid && j <= right) {
-            if (arr[i] <= arr[j]) {
-                temp[k++] = arr[i++];
-            } else {
-                temp[k++] = arr[j++];
-                inversions += (mid - i + 1);
-            }
-        }
-
-        while (i <= mid) temp[k++] = arr[i++];
-        while (j <= right) temp[k++] = arr[j++];
-        for (i = left, k = 0; i <= right; ++i, ++k) {
-            arr[i] = temp[k];
-        }
-
-        return inversions;
-    }
-
-    int mergeSortAndCount(vector<int>& arr, int left, int right) {
-        int inversions = 0;
-        if (left < right) {
-            int mid = left + (right - left) / 2;
-
-            inversions += mergeSortAndCount(arr, left, mid);
-            inversions += mergeSortAndCount(arr, mid + 1, right);
-            inversions += mergeAndCount(arr, left, mid, right);
-        }
-        return inversions;
-    }
-
-    int inversionCount(vector<int>& arr) {
-        return mergeSortAndCount(arr, 0, arr.size() - 1);
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    private int mergeAndCount(int[] arr, int[] temp, int left, int mid, int right) {
-        int i = left, j = mid + 1, k = left, inversions = 0;
-
-        while (i <= mid && j <= right) {
-            if (arr[i] <= arr[j]) {
-                temp[k++] = arr[i++];
-            } else {
-                temp[k++] = arr[j++];
-                inversions += (mid - i + 1);
-            }
-        }
-
-        while (i <= mid) temp[k++] = arr[i++];
-        while (j <= right) temp[k++] = arr[j++];
-
-        for (i = left; i <= right; i++) {
-            arr[i] = temp[i];
-        }
-
-        return inversions;
-    }
-
-    private int mergeSortAndCount(int[] arr, int[] temp, int left, int right) {
-        int inversions = 0;
-        if (left < right) {
-            int mid = left + (right - left) / 2;
-
-            inversions += mergeSortAndCount(arr, temp, left, mid);
-            inversions += mergeSortAndCount(arr, temp, mid + 1, right);
-            inversions += mergeAndCount(arr, temp, left, mid, right);
-        }
-        return inversions;
-    }
-
-    public int inversionCount(int[] arr) {
-        int[] temp = new int[arr.length];
-        return mergeSortAndCount(arr, temp, 0, arr.length - 1);
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -259,16 +119,10 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
 
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
