@@ -1,10 +1,3 @@
----
-Difficulty: Hard
-Source: 160 Days of Problem Solving
-Tags:
-  - Sorting
-  - Mathematical
----
 
 # 🚀 _Day 7. Merge Without Extra Space_ 🧠
 
@@ -76,112 +69,6 @@ This problem can be solved using the **Gap Algorithm**, which reduces the need f
 
 ## 📝 **Solution Code**
 
-## Code (C)
-
-```c
-void mergeArrays(int* a, int n, int* b, int m) {
-    int gap = n + m;
-    int nextGap(int gap) {
-        return (gap <= 1) ? 0 : (gap / 2) + (gap % 2);
-    }
-
-    for (gap = nextGap(gap); gap > 0; gap = nextGap(gap)) {
-        int i, j;
-
-        for (i = 0; i + gap < n; i++) {
-            if (a[i] > a[i + gap]) {
-                int temp = a[i];
-                a[i] = a[i + gap];
-                a[i + gap] = temp;
-            }
-        }
-        for (j = (gap > n ? gap - n : 0); i < n && j < m; i++, j++) {
-            if (a[i] > b[j]) {
-                int temp = a[i];
-                a[i] = b[j];
-                b[j] = temp;
-            }
-        }
-        for (j = 0; j + gap < m; j++) {
-            if (b[j] > b[j + gap]) {
-                int temp = b[j];
-                b[j] = b[j + gap];
-                b[j + gap] = temp;
-            }
-        }
-    }
-}
-```
-
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    int nextGap(int gap) {
-        return (gap <= 1) ? 0 : (gap / 2) + (gap % 2);
-    }
-
-    void mergeArrays(vector<int>& a, vector<int>& b) {
-        int n = a.size(), m = b.size(), gap = n + m;
-
-        for (gap = nextGap(gap); gap > 0; gap = nextGap(gap)) {
-            int i, j;
-
-            for (i = 0; i + gap < n; i++) {
-                if (a[i] > a[i + gap]) swap(a[i], a[i + gap]);
-            }
-
-            for (j = (gap > n ? gap - n : 0); i < n && j < m; i++, j++) {
-                if (a[i] > b[j]) swap(a[i], b[j]);
-            }
-
-            for (j = 0; j + gap < m; j++) {
-                if (b[j] > b[j + gap]) swap(b[j], b[j + gap]);
-            }
-        }
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    private int nextGap(int gap) {
-        return (gap <= 1) ? 0 : (gap / 2) + (gap % 2);
-    }
-    public void mergeArrays(int[] a, int[] b) {
-        int n = a.length, m = b.length;
-        int gap = n + m;
-
-        for (gap = nextGap(gap); gap > 0; gap = nextGap(gap)) {
-            int i, j;
-            for (i = 0; i + gap < n; i++) {
-                if (a[i] > a[i + gap]) {
-                    int temp = a[i];
-                    a[i] = a[i + gap];
-                    a[i + gap] = temp;
-                }
-            }
-            for (j = (gap > n ? gap - n : 0); i < n && j < m; i++, j++) {
-                if (a[i] > b[j]) {
-                    int temp = a[i];
-                    a[i] = b[j];
-                    b[j] = temp;
-                }
-            }
-            for (j = 0; j + gap < m; j++) {
-                if (b[j] > b[j + gap]) {
-                    int temp = b[j];
-                    b[j] = b[j + gap];
-                    b[j + gap] = temp;
-                }
-            }
-        }
-    }
-}
-```
 
 ## Code (Python)
 
@@ -219,16 +106,9 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
