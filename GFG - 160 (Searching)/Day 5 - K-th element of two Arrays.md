@@ -1,11 +1,4 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - Arrays
-  - Divide and Conquer
-  - Searching
----
+
 
 # 🚀 _Day 5. K-th element of two Arrays_ 🧠
 
@@ -76,94 +69,6 @@ Explanation: The combined sorted array is `[72, 86, 100, 112, 113, 119, 256, 265
 
 ## 📝 **Solution Code**
 
-## Code (C)
-
-```c
-int kthElement(int *a, int n, int *b, int m, int k) {
-    if (n > m) return kthElement(b, m, a, n, k);
-
-    int low = k > m ? k - m : 0, high = k < n ? k : n;
-
-    while (low <= high) {
-        int cut1 = (low + high) / 2;
-        int cut2 = k - cut1;
-
-        int l1 = (cut1 > 0) ? a[cut1 - 1] : INT_MIN;
-        int l2 = (cut2 > 0) ? b[cut2 - 1] : INT_MIN;
-        int r1 = (cut1 < n) ? a[cut1] : INT_MAX;
-        int r2 = (cut2 < m) ? b[cut2] : INT_MAX;
-
-        if (l1 <= r2 && l2 <= r1) {
-            return l1 > l2 ? l1 : l2;
-        } else if (l1 > r2) {
-            high = cut1 - 1;
-        } else {
-            low = cut1 + 1;
-        }
-    }
-
-    return -1;
-}
-```
-
-## Code (Cpp)
-
-```cpp
-class Solution {
-public:
-    int kthElement(vector<int>& a, vector<int>& b, int k) {
-        if (a.size() > b.size()) return kthElement(b, a, k);
-
-        int n = a.size(), m = b.size(), low = max(0, k - m), high = min(k, n);
-
-        while (low <= high) {
-            int cut1 = (low + high) / 2, cut2 = k - cut1;
-            int l1 = cut1 > 0 ? a[cut1 - 1] : INT_MIN;
-            int l2 = cut2 > 0 ? b[cut2 - 1] : INT_MIN;
-            int r1 = cut1 < n ? a[cut1] : INT_MAX;
-            int r2 = cut2 < m ? b[cut2] : INT_MAX;
-
-            if (l1 <= r2 && l2 <= r1) return max(l1, l2);
-            (l1 > r2) ? high = cut1 - 1 : low = cut1 + 1;
-        }
-        return -1;
-    }
-};
-
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public int kthElement(int[] a, int[] b, int k) {
-        if (a.length > b.length) return kthElement(b, a, k);
-
-        int n = a.length, m = b.length, low = Math.max(0, k - m), high = Math.min(k, n);
-
-        while (low <= high) {
-            int cut1 = (low + high) / 2;
-            int cut2 = k - cut1;
-
-            int l1 = (cut1 > 0) ? a[cut1 - 1] : Integer.MIN_VALUE;
-            int l2 = (cut2 > 0) ? b[cut2 - 1] : Integer.MIN_VALUE;
-            int r1 = (cut1 < n) ? a[cut1] : Integer.MAX_VALUE;
-            int r2 = (cut2 < m) ? b[cut2] : Integer.MAX_VALUE;
-
-            if (l1 <= r2 && l2 <= r1) {
-                return Math.max(l1, l2);
-            } else if (l1 > r2) {
-                high = cut1 - 1;
-            } else {
-                low = cut1 + 1;
-            }
-        }
-
-        return -1;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -197,16 +102,8 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, please visit my LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Thank you for your input; together, we strive to create a space where learning is a collaborative endeavor.
+For discussions, questions, or doubts related to this solution, please visit my LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Thank you for your input; together, we strive to create a space where learning is a collaborative endeavor.
 
 ⭐ Star this repository if you find it helpful or intriguing! ⭐
 
 ---
-
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">   
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />  
-</p>
