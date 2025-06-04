@@ -1,9 +1,3 @@
----
-Difficulty: Easy
-Source: 160 Days of Problem Solving
-Tags:
-  - Searching
----
 
 # 🚀 _Day 2. Sorted and Rotated Minimum_ 🧠
 
@@ -71,64 +65,6 @@ The minimum element is `4`.
 
 ## Code (C)
 
-```c
-int findMin(int* arr, int n) {
-    int lo = 0, hi = n - 1;
-    while (lo < hi) {
-        if (arr[lo] < arr[hi])
-            return arr[lo];
-        int mid = lo + ((hi - lo) >> 1);
-        if (arr[mid] > arr[hi])
-            lo = mid + 1;
-        else
-            hi = mid;
-    }
-    return arr[lo];
-}
-```
-
-## Code (Cpp)
-
-```cpp
-class Solution {
-public:
-    int findMin(vector<int>& arr) {
-        int lo = 0, hi = arr.size() - 1;
-        while (lo < hi) {
-            if (arr[lo] < arr[hi])
-                return arr[lo];
-            int mid = lo + ((hi - lo) >> 1);
-            if (arr[mid] > arr[hi])
-                lo = mid + 1;
-            else
-                hi = mid;
-        }
-
-        return arr[lo];
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public int findMin(int[] arr) {
-        int lo = 0, hi = arr.length - 1;
-        while (lo < hi) {
-            if (arr[lo] < arr[hi])
-                return arr[lo];
-            int mid = lo + ((hi - lo) >> 1);
-            if (arr[mid] > arr[hi])
-                lo = mid + 1;
-            else
-                hi = mid;
-        }
-        return arr[lo];
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -148,16 +84,9 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
