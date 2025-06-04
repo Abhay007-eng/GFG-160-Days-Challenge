@@ -1,10 +1,3 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - Binary
-  - SearchArrays
----
 
 # 🚀 _Day 8. Kth Missing Positive Number in a Sorted Array_ 🧠
 
@@ -96,61 +89,6 @@ since no additional data structures are used apart from a few variables.
 
 ## 📝 **Solution Code**
 
-## Code (C)
-
-```c
-int kthMissing(int* arr, int n, int k) {
-    int lo = 0, hi = n;
-    while (lo < hi) {
-        int mid = lo + (hi - lo) / 2;
-        if (arr[mid] - (mid + 1) < k) {
-            lo = mid + 1;
-        } else {
-            hi = mid;
-        }
-    }
-    return lo + k;
-}
-```
-
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    int kthMissing(vector<int>& arr, int k) {
-        int lo = 0, hi = arr.size();
-        while (lo < hi) {
-            int mid = lo + (hi - lo) / 2;
-            if (arr[mid] - (mid + 1) < k)
-                lo = mid + 1;
-            else
-                hi = mid;
-        }
-        return lo + k;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public int kthMissing(int[] arr, int k) {
-        int lo = 0, hi = arr.length;
-        while (lo < hi) {
-            int mid = lo + (hi - lo) / 2;
-            if (arr[mid] - (mid + 1) < k) {
-                lo = mid + 1;
-            } else {
-                hi = mid;
-            }
-        }
-        return lo + k;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -168,16 +106,8 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, please visit my LinkedIn:- [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Thank you for your input; together, we strive to create a space where learning is a collaborative endeavor.
+For discussions, questions, or doubts related to this solution, please visit my LinkedIn:- [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Thank you for your input; together, we strive to create a space where learning is a collaborative endeavor.
 
 ⭐ Star this repository if you find it helpful or intriguing! ⭐
 
 ---
-
-<div align=center>
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">   
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />  
-</p>
