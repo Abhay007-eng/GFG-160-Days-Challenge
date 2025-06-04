@@ -1,9 +1,3 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - Binary Search
----
 
 # 🚀 _Day 6. Aggressive Cows_ 🧠
 
@@ -70,57 +64,6 @@ You are given an array `stalls[]` representing the positions of stalls, where ea
 
 ## 📝 **Solution Code**
 
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    int aggressiveCows(vector<int>& stalls, int k) {
-        sort(stalls.begin(), stalls.end());
-        int low = 1, high = stalls.back() - stalls.front(), mid;
-
-        while (low <= high) {
-            mid = low + (high - low) / 2;
-            int count = 1, last = stalls[0];
-            for (int i = 1; i < stalls.size(); i++)
-                if (stalls[i] - last >= mid) { count++; last = stalls[i]; }
-            if (count >= k) low = mid + 1;
-            else high = mid - 1;
-        }
-        return high;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public static int aggressiveCows(int[] stalls, int k) {
-        Arrays.sort(stalls);
-        int low = 1, high = stalls[stalls.length - 1] - stalls[0], result = 0;
-
-        while (low <= high) {
-            int mid = low + (high - low) / 2;
-            int count = 1, lastPlaced = stalls[0];
-            for (int i = 1; i < stalls.length; i++) {
-                if (stalls[i] - lastPlaced >= mid) {
-                    count++;
-                    lastPlaced = stalls[i];
-                }
-            }
-            if (count >= k) {
-                result = mid;
-                low = mid + 1;
-            } else {
-                high = mid - 1;
-            }
-        }
-        return result;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -145,16 +88,8 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s keep collaborating and learning together! 🚀
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s keep collaborating and learning together! 🚀
 
 ⭐ If you found this helpful, consider giving the repository a star! ⭐
 
 ---
-
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
