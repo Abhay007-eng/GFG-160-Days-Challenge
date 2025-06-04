@@ -1,10 +1,3 @@
----
-Difficulty: Easy
-Source: 160 Days of Problem Solving
-Tags:
-  - Arrays
-  - Searching
----
 
 # 🚀 _Day 1. Number of Occurrences_ 🧠
 
@@ -69,83 +62,6 @@ If the number does not exist in the array, return `0`.
 
 ## 📝 **Solution Code**
 
-## Code (C)
-
-```c
-int countFreq(int arr[], int n, int target) {
-    int low = 0, high = n - 1;
-    while (low < high) {
-        int mid = low + (high - low) / 2;
-        if (arr[mid] < target)
-            low = mid + 1;
-        else
-            high = mid;
-    }
-
-    if (arr[low] != target)
-        return 0;
-
-    int first = low;
-    high = n - 1;
-    while (low < high) {
-        int mid = low + (high - low + 1) / 2;
-        if (arr[mid] > target)
-            high = mid - 1;
-        else
-            low = mid;
-    }
-
-    int last = high;
-    return last - first + 1;
-}
-```
-
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    int countFreq(const vector<int>& arr, int target) {
-        auto lower = lower_bound(arr.begin(), arr.end(), target);
-        auto upper = upper_bound(lower, arr.end(), target);
-        return (lower != arr.end() && *lower == target) ? (upper - lower) : 0;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public int countFreq(int[] arr, int target) {
-        int low = 0, high = arr.length - 1;
-        while (low < high) {
-            int mid = low + (high - low) / 2;
-            if (arr[mid] < target)
-                low = mid + 1;
-            else
-                high = mid;
-        }
-
-        if (low >= arr.length || arr[low] != target)
-            return 0;
-
-        int first = low;
-        high = arr.length - 1;
-        while (low < high) {
-            int mid = low + (high - low + 1) / 2;
-            if (arr[mid] > target)
-                high = mid - 1;
-            else
-                low = mid;
-        }
-
-        int last = high;
-        return last - first + 1;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -159,16 +75,10 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
 
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
