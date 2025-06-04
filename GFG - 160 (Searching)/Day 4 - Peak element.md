@@ -1,10 +1,4 @@
----
-Difficulty: Basic
-Source: 160 Days of Problem Solving
-Tags:
-  - Arrays
-  - Searching
----
+
 
 # 🚀 _Day 4. Peak element_ 🧠
 
@@ -71,68 +65,6 @@ You are given an array `arr[]` where no two adjacent elements are the same. A **
 
 ## 📝 **Solution Code**
 
-## Code (C)
-
-```c
-int peakElement(int *arr, int n) {
-    int lo = 0, hi = n - 1;
-
-    while (lo < hi) {
-        int mid = lo + (hi - lo) / 2;
-
-        if (arr[mid] > arr[mid + 1]) {
-            hi = mid;
-        } else {
-            lo = mid + 1;
-        }
-    }
-
-    return lo;
-}
-```
-
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    int peakElement(vector<int> &arr) {
-        int n = arr.size();
-        int lo = 0, hi = n - 1;
-
-        while (lo < hi) {
-            int mid = lo + (hi - lo) / 2;
-            if (arr[mid] > arr[mid + 1]) {
-                hi = mid;
-            } else {
-                lo = mid + 1;
-            }
-        }
-        return lo;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public int peakElement(int[] arr) {
-        int low = 0, high = arr.length - 1;
-
-        while (low < high) {
-            int mid = low + (high - low) / 2;
-            if (arr[mid] > arr[mid + 1]) {
-                high = mid;
-            } else {
-                low = mid + 1;
-            }
-        }
-        return low;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -152,16 +84,8 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
-
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
