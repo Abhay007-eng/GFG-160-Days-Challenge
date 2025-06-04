@@ -1,10 +1,3 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - Searching
-  - Divide and Conquer
----
 
 # 🚀 _Day 3. Search in Rotated Sorted Array_ 🧠
 
@@ -53,39 +46,6 @@ Explanation:
 
 ## 📝 **Solution Code**
 
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    int search(vector<int>& arr, int key) {
-        int n = arr.size();
-        for(int i = 0; i < n; i++) {
-            if(arr[i] == key) {
-                return i;
-            }
-        }
-        return -1;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    int search(int[] arr, int key) {
-        int n = arr.length;
-        for (int i = 0; i < n; i++) {
-            if (arr[i] == key) {
-                return i;
-            }
-        }
-        return -1;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -100,16 +60,9 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
