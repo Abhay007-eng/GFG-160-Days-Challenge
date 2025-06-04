@@ -1,10 +1,3 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - Searching
-  - Divide and Conquer
----
 
 # 🚀 _Day 7. Allocate Minimum Pages_ 🧠
 
@@ -111,60 +104,6 @@ k = 1
 
 ## 📝 **Solution Code**
 
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    int findPages(vector<int>& arr, int k) {
-        int n = arr.size();
-        if (k > n) return -1;
-        int low = *max_element(arr.begin(), arr.end()), high = accumulate(arr.begin(), arr.end(), 0);
-        while (low < high) {
-            int mid = (low + high) / 2, students = 1, sum = 0;
-            for (int pages : arr) {
-                if ((sum += pages) > mid) students++, sum = pages;
-            }
-            if (students > k) low = mid + 1;
-            else high = mid;
-        }
-        return low;
-    }
-};
-```
-
-### Code (Java)
-
-```java
-class Solution {
-    public static int findPages(int[] arr, int k) {
-        int n = arr.length;
-        if (k > n) return -1;
-
-        int low = Arrays.stream(arr).max().getAsInt();
-        int high = Arrays.stream(arr).sum();
-
-        while (low < high) {
-            int mid = (low + high) / 2;
-            int students = 1, sum = 0;
-
-            for (int pages : arr) {
-                if ((sum + pages) > mid) {
-                    students++;
-                    sum = pages;
-                } else {
-                    sum += pages;
-                }
-            }
-
-            if (students > k) low = mid + 1;
-            else high = mid;
-        }
-        return low;
-    }
-}
-```
-
 ### Code (Python)
 
 ```python
@@ -197,16 +136,9 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
