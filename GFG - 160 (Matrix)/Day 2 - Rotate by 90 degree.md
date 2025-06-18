@@ -1,9 +1,3 @@
----
-Difficulty: Easy
-Source: 160 Days of Problem Solving
-Tags:
-  - Matrix
----
 
 # 🚀 _Day 2. Rotate by 90 degree_ 🧠
 
@@ -52,93 +46,6 @@ Given a square matrix `mat[][]` of size `n x n`, rotate it by 90 degrees in an a
 
 ## 📝 **Solution Code**
 
-## Code (C)
-
-```c
-void rotateby90(int n, int mat[][n]) {
-    for (int i = 0; i < n; i++) {
-        for (int j = i; j < n; j++) {
-            int temp = mat[i][j];
-            mat[i][j] = mat[j][i];
-            mat[j][i] = temp;
-        }
-    }
-    for (int j = 0; j < n; j++) {
-        for (int i = 0, k = n - 1; i < k; i++, k--) {
-            int temp = mat[i][j];
-            mat[i][j] = mat[k][j];
-            mat[k][j] = temp;
-        }
-    }
-}
-```
-
-## Code (Cpp)
-
-```cpp
-class Solution {
-public:
-    void rotateby90(vector<vector<int>>& mat) {
-        int n = mat.size();
-        for (int i = 0; i < n; i++) {
-            for (int j = i; j < n; j++) {
-                swap(mat[i][j], mat[j][i]);
-            }
-        }
-        reverse(mat.begin(), mat.end());
-    }
-};
-```
-
-<details>
-  <summary><h2 align='center'>👨‍💻 Alternative Approaches</h2></summary>
-
-## Code (Cpp)
-
-```cpp
-class Solution {
-public:
-    void rotateby90(vector<vector<int>>& mat) {
-        int n = mat.size();
-        for (int i = 0; i < n; i++) {
-            for (int j = i; j < n; j++) {
-                swap(mat[i][j], mat[j][i]);
-            }
-        }
-        for (int j = 0; j < n; j++) {
-            for (int i = 0, k = n - 1; i < k; i++, k--) {
-                swap(mat[i][j], mat[k][j]);
-            }
-        }
-    }
-};
-```
-
-</details>
-
-## Code (Java)
-
-```java
-class Solution {
-    static void rotateby90(int mat[][]) {
-        int n = mat.length;
-        for (int i = 0; i < n; i++) {
-            for (int j = i; j < n; j++) {
-                int temp = mat[i][j];
-                mat[i][j] = mat[j][i];
-                mat[j][i] = temp;
-            }
-        }
-        for (int j = 0; j < n; j++) {
-            for (int i = 0, k = n - 1; i < k; i++, k--) {
-                int temp = mat[i][j];
-                mat[i][j] = mat[k][j];
-                mat[k][j] = temp;
-            }
-        }
-    }
-}
-```
 
 ## Code (Python)
 
@@ -159,16 +66,8 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
-
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
