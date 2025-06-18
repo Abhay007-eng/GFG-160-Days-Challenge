@@ -1,11 +1,4 @@
----
-Difficulty: Easy
-Source: 160 Days of Problem Solving
-Tags:
-  - Binary Search
-  - Arrays
-  - Matrix
----
+
 
 # 🚀 _Day 4. Search in a Row-Wise Sorted Matrix_ 🧠
 
@@ -99,35 +92,6 @@ Explanation: 91 is not present in the matrix.
 
 ## 📝 **Solution Code**
 
-## Code (Cpp)
-
-```cpp
-class Solution {
-public:
-    bool searchRowMatrix(vector<vector<int>>& mat, int x) {
-        for (auto& row : mat) {
-            if (binary_search(row.begin(), row.end(), x)) return true;
-        }
-        return false;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public boolean searchRowMatrix(int[][] mat, int x) {
-        for (int[] row : mat) {
-            if (Arrays.binarySearch(row, x) >= 0) {
-                return true;
-            }
-        }
-        return false;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -141,16 +105,9 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, please visit my LinkedIn:- [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Thank you for your input; together, we strive to create a space where learning is a collaborative endeavor.
+For discussions, questions, or doubts related to this solution, please visit my LinkedIn:- [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Thank you for your input; together, we strive to create a space where learning is a collaborative endeavor.
 
 ⭐ Star this repository if you find it helpful or intriguing! ⭐
 
 ---
 
-<div align=center>
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center" >   
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />  
-</p>
