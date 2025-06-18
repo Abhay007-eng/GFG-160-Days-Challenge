@@ -1,9 +1,3 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - Matrix
----
 
 # 🚀 _Day 6. Set Matrix Zeroes_ 🧠
 
@@ -71,51 +65,6 @@ In the given matrix, `mat[0][0]` and `mat[0][3]` are `0`. Therefore, row 0, colu
 
 ## 📝 **Solution Code**
 
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    void setMatrixZeroes(vector<vector<int>>& mat) {
-        int n = mat.size(), m = mat[0].size(), col0 = 1;
-        for (int i = 0; i < n; ++i) {
-            if (mat[i][0] == 0) col0 = 0;
-            for (int j = 1; j < m; ++j)
-                if (mat[i][j] == 0)
-                    mat[i][0] = mat[0][j] = 0;
-        }
-        for (int i = n - 1; i >= 0; --i) {
-            for (int j = m - 1; j >= 1; --j)
-                if (mat[i][0] == 0 || mat[0][j] == 0)
-                    mat[i][j] = 0;
-            if (col0 == 0) mat[i][0] = 0;
-        }
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public void setMatrixZeroes(int[][] mat) {
-        int n = mat.length, m = mat[0].length, col0 = 1;
-        for (int i = 0; i < n; i++) {
-            if (mat[i][0] == 0) col0 = 0;
-            for (int j = 1; j < m; j++)
-                if (mat[i][j] == 0)
-                    mat[i][0] = mat[0][j] = 0;
-        }
-        for (int i = n - 1; i >= 0; i--) {
-            for (int j = m - 1; j >= 1; j--)
-                if (mat[i][0] == 0 || mat[0][j] == 0)
-                    mat[i][j] = 0;
-            if (col0 == 0) mat[i][0] = 0;
-        }
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -136,16 +85,9 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
