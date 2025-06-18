@@ -1,10 +1,3 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - Searching
-  - Matrix
----
 
 # 🚀 _Day 5. Search in a sorted Matrix_ 🧠
 
@@ -72,40 +65,6 @@ This problem can be solved efficiently using binary search. Even though the matr
 
 ## 📝 **Solution Code**
 
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    bool searchMatrix(vector<vector<int>>& mat, int x) {
-        int n = mat.size(), m = mat[0].size(), l = 0, r = n * m - 1;
-        while (l <= r) {
-            int mid = (l + r) / 2, val = mat[mid / m][mid % m];
-            if (val == x) return true;
-            val < x ? l = mid + 1 : r = mid - 1;
-        }
-        return false;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public boolean searchMatrix(int[][] mat, int x) {
-        int n = mat.length, m = mat[0].length, l = 0, r = n * m - 1;
-        while (l <= r) {
-            int mid = (l + r) / 2, val = mat[mid / m][mid % m];
-            if (val == x) return true;
-            if (val < x) l = mid + 1;
-            else r = mid - 1;
-        }
-        return false;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -127,16 +86,8 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
-
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
