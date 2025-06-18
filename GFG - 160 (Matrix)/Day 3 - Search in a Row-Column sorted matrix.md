@@ -1,10 +1,3 @@
----
-Difficulty: Easy
-Source: 160 Days of Problem Solving
-Tags:
-  - Searching
-  - Matrix
----
 
 # 🚀 _Day 3. Search in a Row-Column Sorted Matrix_ 🧠
 
@@ -70,39 +63,6 @@ Given a 2D integer matrix `mat[][]` of size `n x m`, where every row and column 
 
 ## 📝 **Solution Code**
 
-## Code (Cpp)
-
-```cpp
-class Solution {
-public:
-    bool matSearch(vector<vector<int>>& mat, int x) {
-        int r = 0, c = mat[0].size() - 1;
-        while (r < mat.size() && c >= 0) {
-            if (mat[r][c] == x) return true;
-            else if (mat[r][c] > x) c--;
-            else r++;
-        }
-        return false;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public boolean matSearch(int[][] mat, int x) {
-        int r = 0, c = mat[0].length - 1;
-        while (r < mat.length && c >= 0) {
-            if (mat[r][c] == x) return true;
-            else if (mat[r][c] > x) c--;
-            else r++;
-        }
-        return false;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -118,16 +78,9 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
