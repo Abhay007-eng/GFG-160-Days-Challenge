@@ -1,10 +1,4 @@
----
-Difficulty: Easy
-Source: 160 Days of Problem Solving
-Tags:
-  - Arrays
-  - Hash
----
+
 
 # 🚀 _Day 2. Count Pair with Given Sum_ 🧠
 
@@ -85,54 +79,6 @@ Output:
 
 ## 📝 **Solution Code**
 
-## Code (C)
-
-```c
-int countPairs(int arr[], int n, int target) {
-    int hashMap[200001] = {0}, count = 0;
-
-    for (int i = 0; i < n; i++) {
-        count += hashMap[target - arr[i] + 100000];
-        hashMap[arr[i] + 100000]++;
-    }
-
-    return count;
-}
-```
-
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    int countPairs(vector<int> &arr, int target) {
-        unordered_map<int, int> freq;
-        int count = 0;
-        for (int num : arr)
-            count += freq[target - num], freq[num]++;
-        return count;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    int countPairs(int[] arr, int target) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        int count = 0;
-
-        for (int num : arr) {
-            count += map.getOrDefault(target - num, 0);
-            map.put(num, map.getOrDefault(num, 0) + 1);
-        }
-
-        return count;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -147,16 +93,10 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, please visit my LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Thank you for your input; together, we strive to create a space where learning is a collaborative endeavor.
+For discussions, questions, or doubts related to this solution, please visit my LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Thank you for your input; together, we strive to create a space where learning is a collaborative endeavor.
 
 ⭐ Star this repository if you find it helpful or intriguing! ⭐
 
 ---
 
-<div align=center>
-  <h3><b>📍Visitor Count</b></h3>
-</div>
 
-<p align="center" >   
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />  
-</p>
