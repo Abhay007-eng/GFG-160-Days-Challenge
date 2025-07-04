@@ -1,10 +1,3 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - Hash
-  - Strings
----
 
 # 🚀 _Day 7. Print Anagrams Together_ 🧠
 
@@ -75,73 +68,6 @@ Explanation:
 
 ## 📝 **Solution Code**
 
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    vector<vector<string>> anagrams(vector<string>& arr) {
-        unordered_map<string, vector<string>> umap;
-
-        for (const string& s : arr) {
-            string sorted_s = s;
-            sort(sorted_s.begin(), sorted_s.end());
-            umap[sorted_s].push_back(s);
-        }
-
-        vector<vector<string>> result;
-        for (auto it = umap.begin(); it != umap.end(); ++it)
-            result.push_back(move(it->second));
-
-        return result;
-    }
-};
-```
-
-<details>
-  <summary><h2 align='center'>👨‍💻 Alternative Approaches</h2></summary>
-
-## Approach Using Sorting and Hash Map
-
-```cpp
-class Solution {
-public:
-    vector<vector<string>> anagrams(vector<string>& arr) {
-        unordered_map<string, vector<string>> umap;
-        for (string s : arr) {
-            string sorted_s = s;
-            sort(sorted_s.begin(), sorted_s.end());
-            umap[sorted_s].push_back(s);
-        }
-        vector<vector<string>> result;
-        for (auto it : umap)
-            result.push_back(it.second);
-        return result;
-    }
-};
-```
-
-</details>
-
-## Code (Java)
-
-```java
-class Solution {
-    public ArrayList<ArrayList<String>> anagrams(String[] arr) {
-        Map<String, ArrayList<String>> umap = new HashMap<>();
-        for (String s : arr) {
-            char[] chars = s.toCharArray();
-            Arrays.sort(chars);
-            String sorted_s = new String(chars);
-            umap.computeIfAbsent(sorted_s, k -> new ArrayList<>()).add(s);
-        }
-
-        ArrayList<ArrayList<String>> result = new ArrayList<>(umap.values());
-        return result;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -159,16 +85,8 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
-
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
