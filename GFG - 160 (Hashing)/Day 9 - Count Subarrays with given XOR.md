@@ -1,10 +1,4 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - Arrays
-  - Map
----
+
 
 # 🚀 _Day 9. Count Subarrays with Given XOR_ 🧠
 
@@ -85,44 +79,6 @@ The problem is solved using the **Prefix XOR** technique combined with a **Hash 
 
 ## 📝 **Solution Code**
 
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    long subarrayXor(vector<int> &arr, int k) {
-        long res = 0, prefXOR = 0;
-        unordered_map<int, int> mp;
-        for (int val : arr) {
-            prefXOR ^= val;
-            res += mp[prefXOR ^ k] + (prefXOR == k);
-            mp[prefXOR]++;
-        }
-        return res;
-    }
-};
-
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public long subarrayXor(int[] arr, int k) {
-        long res = 0, prefXOR = 0;
-        Map<Long, Integer> mp = new HashMap<>();
-        mp.put(0L, 1);
-        for (int val : arr) {
-            prefXOR ^= val;
-            res += mp.getOrDefault(prefXOR ^ k, 0);
-            mp.put(prefXOR, mp.getOrDefault(prefXOR, 0) + 1);
-        }
-
-        return res;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -139,16 +95,9 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
