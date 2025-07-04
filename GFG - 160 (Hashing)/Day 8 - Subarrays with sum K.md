@@ -1,9 +1,4 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - Hash
----
+
 
 # 🚀 _Day 8. Subarrays with Sum K_ 🧠
 
@@ -91,46 +86,6 @@ To solve this problem efficiently:
 
 ## 📝 **Solution Code**
 
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    int countSubarrays(vector<int>& arr, int k) {
-        unordered_map<int, int> prefixSumCount = {{0, 1}};
-        int sum = 0, count = 0;
-
-        for (int num : arr) {
-            sum += num;
-            count += prefixSumCount[sum - k];
-            prefixSumCount[sum]++;
-        }
-
-        return count;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public int countSubarrays(int[] arr, int k) {
-        Map<Integer, Integer> prefixSumCount = new HashMap<>();
-        prefixSumCount.put(0, 1);
-        int sum = 0, count = 0;
-
-        for (int num : arr) {
-            sum += num;
-            count += prefixSumCount.getOrDefault(sum - k, 0);
-            prefixSumCount.put(sum, prefixSumCount.getOrDefault(sum, 0) + 1);
-        }
-
-        return count;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -149,16 +104,8 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, please visit my LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Thank you for your input; together, we strive to create a space where learning is a collaborative endeavor.
+For discussions, questions, or doubts related to this solution, please visit my LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Thank you for your input; together, we strive to create a space where learning is a collaborative endeavor.
 
 ⭐ Star this repository if you find it helpful or intriguing! ⭐
 
 ---
-
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">   
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />  
-</p>
