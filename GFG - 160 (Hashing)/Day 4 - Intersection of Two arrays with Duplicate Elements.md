@@ -1,12 +1,4 @@
----
-Difficulty: Easy
-Source: 160 Days of Problem Solving
-Tags:
-  - Sorting
-  - two-pointer-algorithm
-  - Arrays
-  - Hash
----
+
 
 # 🚀 _Day 4. Intersection of Two arrays with Duplicate Elements_ 🧠
 
@@ -76,43 +68,6 @@ No common elements exist in both arrays.
 
 ## 📝 **Solution Code**
 
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    vector<int> intersectionWithDuplicates(vector<int>& a, vector<int>& b) {
-        unordered_set<int> sa(a.begin(), a.end());
-        unordered_set<int> res_set;
-        for (int num : b) {
-            if (sa.erase(num)) {
-                res_set.insert(num);
-            }
-        }
-        return vector<int>(res_set.begin(), res_set.end());
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public ArrayList<Integer> intersectionWithDuplicates(int[] a, int[] b) {
-        HashSet<Integer> setA = new HashSet<>();
-        ArrayList<Integer> result = new ArrayList<>();
-
-        for (int num : a) setA.add(num);
-
-        for (int num : b) {
-            if (setA.remove(num)) result.add(num);
-        }
-
-        return result;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -131,16 +86,8 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
-
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
