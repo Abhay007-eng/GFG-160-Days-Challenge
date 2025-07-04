@@ -1,10 +1,3 @@
----
-Difficulty: Easy
-Source: 160 Days of Problem Solving
-Tags:
-  - Mathematical
-  - Hash
----
 
 # 🚀 _Day 5. Union of Arrays with Duplicates_ 🧠
 
@@ -71,31 +64,6 @@ The union set of both arrays is `{1, 2}`. The count of distinct elements is `2`.
 
 ## 📝 **Solution Code**
 
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    int findUnion(vector<int>& a, vector<int>& b) {
-        unordered_set<int> s(a.begin(), a.end());
-        s.insert(b.begin(), b.end());
-        return s.size();
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public static int findUnion(int[] a, int[] b) {
-        HashSet<Integer> set = new HashSet<>();
-        for (int num : a) set.add(num);
-        for (int num : b) set.add(num);
-        return set.size();
-    }
-}
-```
 
 ## Code (Python)
 
@@ -107,16 +75,9 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
