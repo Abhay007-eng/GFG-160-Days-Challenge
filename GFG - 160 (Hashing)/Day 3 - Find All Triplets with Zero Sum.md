@@ -1,11 +1,4 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - Arrays
-  - Hash
-  - Sorting
----
+
 
 # 🚀 _Day 3. Find All Triplets with Zero Sum_ 🧠
 
@@ -65,52 +58,7 @@ No triplet with sum 0.
 - **Expected Auxiliary Space Complexity:** $O(n^2)$, where `n` is the size of the array. We use additional space to store the hash map and results.
 
 ## 📝 **Solution Code**
-
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    vector<vector<int>> findTriplets(vector<int>& arr) {
-        vector<vector<int>> res;
-        int n = arr.size();
-        for (int i = 0; i < n - 2; i++) {
-            for (int j = i + 1; j < n - 1; j++) {
-                for (int k = j + 1; k < n; k++) {
-                    if (arr[i] + arr[j] + arr[k] == 0) {
-                        res.push_back({i, j, k});
-                    }
-                }
-            }
-        }
-
-        return res;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public List<List<Integer>> findTriplets(int[] arr) {
-        List<List<Integer>> res = new ArrayList<>();
-        int n = arr.length;
-
-        for (int i = 0; i < n - 2; i++) {
-            for (int j = i + 1; j < n - 1; j++) {
-                for (int k = j + 1; k < n; k++) {
-                    if (arr[i] + arr[j] + arr[k] == 0) {
-                        res.add(Arrays.asList(i, j, k));
-                    }
-                }
-            }
-        }
-
-        return res;
-    }
-}
-```
+`
 
 ## Code (Python)
 
@@ -141,16 +89,8 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, please visit my LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Thank you for your input; together, we strive to create a space where learning is a collaborative endeavor.
+For discussions, questions, or doubts related to this solution, please visit my LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Thank you for your input; together, we strive to create a space where learning is a collaborative endeavor.
 
 ⭐ Star this repository if you find it helpful or intriguing! ⭐
 
 ---
-
-<div align=center>
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center" >   
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />  
-</p>
