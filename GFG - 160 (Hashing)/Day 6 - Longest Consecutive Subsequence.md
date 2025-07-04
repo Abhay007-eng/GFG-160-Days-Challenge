@@ -1,9 +1,4 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - Hash
----
+
 
 # 🚀 _Day 6. Longest Consecutive Subsequence_ 🧠
 
@@ -64,82 +59,6 @@ The consecutive numbers are `[9, 10, 11, 12, 13, 14, 15]`. These 7 numbers form 
 
 ## 📝 **Solution Code**
 
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    int longestConsecutive(vector<int>& nums) {
-        unordered_set<int> numSet(nums.begin(), nums.end());
-        int longest = 0;
-
-        for (int num : numSet) {
-            if (!numSet.count(num - 1)) {
-                int current = num, count = 1;
-                while (numSet.count(current + 1)) current++, count++;
-                longest = max(longest, count);
-            }
-        }
-        return longest;
-    }
-};
-```
-
-<details>
-  <summary><h2 align='center'>👨‍💻 Alternative Approach</h2></summary>
-
-### Alternative Using Sorting
-
-1. Sort the array and traverse to find consecutive elements.
-2. Time Complexity: O(n log n) due to sorting.
-3. Auxiliary Space Complexity: O(1) if sorting in place.
-
-Code:
-
-```cpp
-class Solution {
-public:
-    int longestConsecutive(vector<int>& nums) {
-        if (nums.empty()) return 0;
-        sort(nums.begin(), nums.end());
-        int longest = 1;
-        int count = 1;
-        for (int i = 1; i < nums.size(); i++) {
-            if (nums[i] == nums[i - 1]) continue;
-            if (nums[i] == nums[i - 1] + 1) {
-                count++;
-            } else {
-                longest = max(longest, count);
-                count = 1;
-            }
-        }
-        return max(longest, count);
-    }
-};
-```
-
-</details>
-
-## Code (Java)
-
-```java
-class Solution {
-    public int longestConsecutive(int[] nums) {
-        HashSet<Integer> numSet = new HashSet<>();
-        for (int num : nums) numSet.add(num);
-
-        int longest = 0;
-        for (int num : numSet)
-            if (!numSet.contains(num - 1)) {
-                int count = 1;
-                while (numSet.contains(++num)) count++;
-                longest = Math.max(longest, count);
-            }
-        return longest;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -161,16 +80,8 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
-
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
