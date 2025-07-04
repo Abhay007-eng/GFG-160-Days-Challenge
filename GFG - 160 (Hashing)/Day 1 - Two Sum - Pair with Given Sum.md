@@ -1,10 +1,4 @@
----
-Difficulty: Easy
-Source: 160 Days of Problem Solving
-Tags:
-  - Arrays
-  - Hash
----
+
 
 # 🚀 _Day 1. Two Sum - Pair with Given Sum_ 🧠
 
@@ -72,37 +66,6 @@ Explanation: None of the pairs makes a sum of 11.
 
 ## 📝 **Solution Code**
 
-## Code (C++)
-
-```cpp
-class Solution {
-  public:
-    bool twoSum(vector<int>& arr, int target) {
-        unordered_set<int> seen;
-        for (int num : arr) {
-            if (seen.count(target - num)) return true;
-            seen.insert(num);
-        }
-        return false;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    boolean twoSum(int[] arr, int target) {
-        Set<Integer> seen = new HashSet<>();
-        for (int num : arr) {
-            if (seen.contains(target - num)) return true;
-            seen.add(num);
-        }
-        return false;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -123,11 +86,3 @@ For discussions, questions, or doubts related to this solution, feel free to con
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
-
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
