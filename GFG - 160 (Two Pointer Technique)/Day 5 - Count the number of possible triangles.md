@@ -1,12 +1,3 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - two-pointer-algorithm
-  - Arrays
-  - Sorting
----
-
 # 🚀 _Day 5. Count the number of possible triangles_ 🧠
 
 The problem can be found at the following link: [Question Link](https://www.geeksforgeeks.org/batch/gfg-160-problems/track/two-pointer-technique-gfg-160/problem/count-possible-triangles-1587115620)
@@ -92,61 +83,6 @@ Explanation: No triangles are possible.
 
 ## 📝 **Solution Code**
 
-## Code (C)
-
-```c
-int compare(const void *a, const void *b) {
-    return (*(int *)a - *(int *)b);
-}
-
-int countTriangles(int arr[], int n) {
-    qsort(arr, n, sizeof(int), compare);
-    int count = 0;
-    for (int i = n - 1; i >= 2; --i) {
-        int l = 0, r = i - 1;
-        while (l < r) {
-            if (arr[l] + arr[r] > arr[i]) count += (r-- - l);
-            else ++l;
-        }
-    }
-    return count;
-}
-```
-
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    int countTriangles(vector<int>& arr) {
-        sort(arr.begin(), arr.end());
-        int cnt = 0;
-        for (int i = arr.size() - 1; i >= 2; --i)
-            for (int l = 0, r = i - 1; l < r; arr[l] + arr[r] > arr[i] ? cnt += r-- - l : ++l);
-        return cnt;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    static int countTriangles(int[] arr) {
-        Arrays.sort(arr);
-        int count = 0, n = arr.length;
-        for (int i = n - 1; i >= 2; --i) {
-            int l = 0, r = i - 1;
-            while (l < r) {
-                if (arr[l] + arr[r] > arr[i]) count += (r-- - l);
-                else ++l;
-            }
-        }
-        return count;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -167,16 +103,9 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, please visit my LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Thank you for your input; together, we strive to create a space where learning is a collaborative endeavor.
+For discussions, questions, or doubts related to this solution, please visit my LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Thank you for your input; together, we strive to create a space where learning is a collaborative endeavor.
 
 ⭐ Star this repository if you find it helpful or intriguing! ⭐
 
 ---
 
-<div align=center>
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center" >   
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />  
-</p>
