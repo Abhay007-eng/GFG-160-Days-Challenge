@@ -1,10 +1,3 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - two-pointer-technique
-  - Hash
----
 
 # 🚀 _Day 1. Count all triplets with given sum in sorted array_ 🧠
 
@@ -71,83 +64,6 @@ No triplet adds up to `1`.
 
 ## 📝 **Solution Code**
 
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    int countTriplets(vector<int>& arr, int target) {
-        int n = arr.size(), res = 0;
-        for (int i = 0; i < n - 2; ++i) {
-            int left = i + 1, right = n - 1;
-            while (left < right) {
-                int sum = arr[i] + arr[left] + arr[right];
-                if (sum < target) {
-                    ++left;
-                } else if (sum > target) {
-                    --right;
-                } else {
-                    if (arr[left] == arr[right]) {
-                        int count = right - left + 1;
-                        res += (count * (count - 1)) / 2;
-                        break;
-                    } else {
-                        int cnt1 = 1, cnt2 = 1;
-                        while (left + 1 < right && arr[left] == arr[left + 1]) ++left, ++cnt1;
-                        while (right - 1 > left && arr[right] == arr[right - 1]) --right, ++cnt2;
-                        res += cnt1 * cnt2;
-                        ++left;
-                        --right;
-                    }
-                }
-            }
-        }
-        return res;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public int countTriplets(int[] arr, int target) {
-        int n = arr.length, res = 0;
-        for (int i = 0; i < n - 2; i++) {
-            int left = i + 1, right = n - 1;
-            while (left < right) {
-                int sum = arr[i] + arr[left] + arr[right];
-                if (sum < target) {
-                    left++;
-                } else if (sum > target) {
-                    right--;
-                } else {
-                    if (arr[left] == arr[right]) {
-                        int count = right - left + 1;
-                        res += count * (count - 1) / 2;
-                        break;
-                    } else {
-                        int cnt1 = 1, cnt2 = 1;
-                        while (left + 1 < right && arr[left] == arr[left + 1]) {
-                            left++;
-                            cnt1++;
-                        }
-                        while (right - 1 > left && arr[right] == arr[right - 1]) {
-                            right--;
-                            cnt2++;
-                        }
-                        res += cnt1 * cnt2;
-                        left++;
-                        right--;
-                    }
-                }
-            }
-        }
-        return res;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -182,7 +98,7 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
@@ -192,6 +108,3 @@ For discussions, questions, or doubts related to this solution, feel free to con
   <h3><b>📍Visitor Count</b></h3>
 </div>
 
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
