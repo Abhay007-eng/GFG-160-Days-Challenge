@@ -1,11 +1,3 @@
----
-Difficulty: Easy
-Source: 160 Days of Problem Solving
-Tags:
-  - two-pointer-algorithm
-  - Strings
----
-
 # 🚀 _Day 8. Longest substring with distinct characters_ 🧠
 
 The problem can be found at the following link: [Problem Link](https://www.geeksforgeeks.org/batch/gfg-160-problems/track/two-pointer-technique-gfg-160/problem/longest-distinct-characters-in-string5848)
@@ -66,40 +58,6 @@ The longest substring with all distinct characters is "abcdef", which has a leng
 
 ## 📝 **Solution Code**
 
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    int longestUniqueSubstr(string &s) {
-        int lastSeen[128] = {}, maxLength = 0, start = 0;
-        for (int end = 0; end < s.size(); ++end) {
-            start = max(start, lastSeen[s[end]]);
-            lastSeen[s[end]] = end + 1;
-            maxLength = max(maxLength, end - start + 1);
-        }
-        return maxLength;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public int longestUniqueSubstr(String s) {
-        int[] lastSeen = new int[128];
-        int maxLength = 0, start = 0;
-        for (int end = 0; end < s.length(); end++) {
-            start = Math.max(start, lastSeen[s.charAt(end)]);
-            lastSeen[s.charAt(end)] = end + 1;
-            maxLength = Math.max(maxLength, end - start + 1);
-        }
-        return maxLength;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -119,16 +77,6 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
-
----
-
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
