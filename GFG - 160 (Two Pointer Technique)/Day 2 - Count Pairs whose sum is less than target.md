@@ -1,12 +1,3 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - Sorting
-  - two-pointer-algorithm
-  - Arrays
----
-
 # 🚀 _Day 2. Count Pairs whose sum is less than target_ 🧠
 
 The problem can be found at the following link: [Problem Link](https://www.geeksforgeeks.org/batch/gfg-160-problems/track/two-pointer-technique-gfg-160/problem/count-pairs-whose-sum-is-less-than-target)
@@ -65,34 +56,6 @@ There are 6 pairs whose sum is less than 7: `(2, 1)`, `(2, 3)`, `(2, 4)`, `(1, 3
 
 ## 📝 **Solution Code**
 
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    int countPairs(vector<int>& arr, int target) {
-        sort(arr.begin(), arr.end());
-        int l = 0, r = arr.size() - 1, ans = 0;
-        while (l < r) (arr[l] + arr[r] < target) ? ans += (r - l), l++ : r--;
-        return ans;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    int countPairs(int[] arr, int target) {
-        Arrays.sort(arr);
-        int l = 0, r = arr.length - 1, ans = 0;
-        while (l < r) if (arr[l] + arr[r] < target) ans += (r - l++);
-        else r--;
-        return ans;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -108,16 +71,12 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
 
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
+
+
