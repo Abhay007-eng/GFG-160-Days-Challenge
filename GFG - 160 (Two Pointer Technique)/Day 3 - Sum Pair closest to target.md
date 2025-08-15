@@ -1,11 +1,3 @@
----
-Difficulty: Easy
-Source: 160 Days of Problem Solving
-Tags:
-  - two-pointer-algorithm
-  - Arrays
----
-
 # 🚀 _Day 3. Sum Pair Closest to Target_ 🧠
 
 The problem can be found at the following link: [Problem Link](https://www.geeksforgeeks.org/batch/gfg-160-problems/track/two-pointer-technique-gfg-160/problem/pair-in-array-whose-sum-is-closest-to-x1124)
@@ -56,46 +48,6 @@ Explanation: The array contains only one element, so no valid pair can be formed
 
 ## 📝 **Solution Code**
 
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    vector<int> sumClosest(vector<int>& arr, int target) {
-        sort(arr.begin(), arr.end());
-        vector<int> res;
-        for (int l = 0, r = arr.size() - 1, minDiff = INT_MAX; l < r;) {
-            int sum = arr[l] + arr[r], diff = abs(target - sum);
-            if (diff < minDiff) minDiff = diff, res = {arr[l], arr[r]};
-            sum < target ? ++l : --r;
-        }
-        return res;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public List<Integer> sumClosest(int[] arr, int target) {
-        Arrays.sort(arr);
-        int l = 0, r = arr.length - 1, minDiff = Integer.MAX_VALUE;
-        List<Integer> res = new ArrayList<>();
-        while (l < r) {
-            int sum = arr[l] + arr[r], diff = Math.abs(target - sum);
-            if (diff < minDiff) {
-                minDiff = diff;
-                res = Arrays.asList(arr[l], arr[r]);
-            }
-            if (sum < target) l++;
-            else r--;
-        }
-        return res;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -114,16 +66,8 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
-
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
