@@ -1,11 +1,3 @@
----
-Difficulty: Easy
-Source: 160 Days of Problem Solving
-Tags:
-  - two-pointer-algorithm
-  - Arrays
----
-
 # 🚀 _Day 4. Pair with Given Sum in a Sorted Array_ 🧠
 
 The problem can be found at the following link: [Problem Link](https://www.geeksforgeeks.org/batch/gfg-160-problems/track/two-pointer-technique-gfg-160/problem/pair-with-given-sum-in-a-sorted-array4940)
@@ -67,46 +59,6 @@ No such pairs exist.
 
 ## 📝 **Solution Code**
 
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    int countPairs(vector<int>& arr, int target) {
-        unordered_map<int, int> freq;
-        int res = 0;
-
-        for (int num : arr) {
-            int complement = target - num;
-            if (freq.count(complement))
-                res += freq[complement];
-
-            freq[num]++;
-        }
-
-        return res;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    int countPairs(int[] arr, int target) {
-        HashMap<Integer, Integer> freq = new HashMap<>();
-        int res = 0;
-
-        for (int num : arr) {
-            res += freq.getOrDefault(target - num, 0);
-            freq.put(num, freq.getOrDefault(num, 0) + 1);
-        }
-
-        return res;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -124,16 +76,7 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
----
-
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
