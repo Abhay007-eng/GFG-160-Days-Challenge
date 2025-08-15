@@ -1,12 +1,3 @@
----
-Difficulty: Easy
-Source: 160 Days of Problem Solving
-Tags:
-  - two-pointer-algorithm
-  - sliding-window
-  - Hash
----
-
 # 🚀 _Day 7. Count Distinct Elements in Every Window_ 🧠
 
 The problem can be found at the following link: [Problem Link](https://www.geeksforgeeks.org/batch/gfg-160-problems/track/two-pointer-technique-gfg-160/problem/count-distinct-elements-in-every-window)
@@ -78,46 +69,6 @@ Given an integer array `arr[]` and a number `k`, find the count of distinct elem
 
 ## 📝 **Solution Code**
 
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    vector<int> countDistinct(vector<int> &arr, int k) {
-        unordered_map<int, int> freq;
-        vector<int> res;
-        for (int i = 0; i < arr.size(); i++) {
-            freq[arr[i]]++;
-            if (i >= k - 1) {
-                res.push_back(freq.size());
-                if (--freq[arr[i - k + 1]] == 0) freq.erase(arr[i - k + 1]);
-            }
-        }
-        return res;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    ArrayList<Integer> countDistinct(int arr[], int k) {
-        HashMap<Integer, Integer> freq = new HashMap<>();
-        ArrayList<Integer> res = new ArrayList<>();
-        for (int i = 0; i < arr.length; i++) {
-            freq.put(arr[i], freq.getOrDefault(arr[i], 0) + 1);
-            if (i >= k - 1) {
-                res.add(freq.size());
-                freq.put(arr[i - k + 1], freq.get(arr[i - k + 1]) - 1);
-                if (freq.get(arr[i - k + 1]) == 0) freq.remove(arr[i - k + 1]);
-            }
-        }
-        return res;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -137,16 +88,9 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
