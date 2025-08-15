@@ -1,13 +1,3 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - two-pointer-algorithm
-  - Arrays
-  - Mathematical
-  - Puzzles
----
-
 # 🚀 _Day 10. Container With Most Water_ 🧠
 
 The problem can be found at the following link: [Problem Link](https://www.geeksforgeeks.org/batch/gfg-160-problems/track/two-pointer-technique-gfg-160/problem/container-with-most-water0535)
@@ -70,31 +60,6 @@ This approach ensures that we efficiently traverse the array in $\(O(n)\)$ time.
 
 ## 📝 **Solution Code**
 
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    int maxWater(vector<int>& arr) {
-        int l = 0, r = arr.size() - 1, res = 0;
-        while (l < r) res = max(res, (r - l) * (arr[l] < arr[r] ? arr[l++] : arr[r--]));
-        return res;
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    public int maxWater(int[] arr) {
-        int l = 0, r = arr.length - 1, res = 0;
-        while (l < r) res = Math.max(res, (r - l) * (arr[l] < arr[r] ? arr[l++] : arr[r--]));
-        return res;
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -109,16 +74,9 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
