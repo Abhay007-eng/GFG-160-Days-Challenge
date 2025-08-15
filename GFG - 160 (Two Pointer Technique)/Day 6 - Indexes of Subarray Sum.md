@@ -1,14 +1,3 @@
----
-Difficulty: Medium
-Source: 160 Days of Problem Solving
-Tags:
-  - two-pointer-technique
-  - Arrays
-  - prefix-sum
-  - Searching
-  - Sliding-window
----
-
 # 🚀 _Day 6. Indexes of Subarray Sum_ 🧠
 
 The problem can be found at the following link: [Problem Link](https://www.geeksforgeeks.org/batch/gfg-160-problems/track/two-pointer-technique-gfg-160/problem/subarray-with-given-sum-1587115621)
@@ -82,39 +71,6 @@ No subarray exists with a sum equal to 2.
 
 ## 📝 **Solution Code**
 
-## Code (C++)
-
-```cpp
-class Solution {
-public:
-    vector<int> subarraySum(vector<int>& arr, int target) {
-        int s = 0, curr = 0;
-        for (int e = 0; e < arr.size(); ++e) {
-            curr += arr[e];
-            while (curr > target && s <= e) curr -= arr[s++];
-            if (curr == target) return {s + 1, e + 1};
-        }
-        return {-1};
-    }
-};
-```
-
-## Code (Java)
-
-```java
-class Solution {
-    static ArrayList<Integer> subarraySum(int[] arr, int target) {
-        int s = 0, curr = 0;
-        for (int e = 0; e < arr.length; e++) {
-            curr += arr[e];
-            while (curr > target && s <= e) curr -= arr[s++];
-            if (curr == target) return new ArrayList<>(Arrays.asList(s + 1, e + 1));
-        }
-        return new ArrayList<>(Arrays.asList(-1));
-    }
-}
-```
-
 ## Code (Python)
 
 ```python
@@ -133,16 +89,9 @@ class Solution:
 
 ## 🎯 **Contribution and Support:**
 
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/patel-hetkumar-sandipbhai-8b110525a/). Let’s make this learning journey more collaborative!
+For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/abhay-valand-4aa92723a/). Let’s make this learning journey more collaborative!
 
 ⭐ If you find this helpful, please give this repository a star! ⭐
 
 ---
 
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
